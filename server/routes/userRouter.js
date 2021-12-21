@@ -1,10 +1,10 @@
-const Router = require("express")
+import Router from "express"
 const router = new Router()
-const UserController = require("../controllers/userController")
+import { registration, login, check } from "../controllers/userController"
+import authMiddleware from "../middleware/authMiddleware"
 
+router.post("/registration", registration)
+router.post("/login", login)
+router.get("/auth", authMiddleware,  check)
 
-router.post("/registration", UserController.registration)
-router.post("/login", UserController.login)
-router.get("/auth", UserController.check)
-
-module.exports = router
+export default router

@@ -1,8 +1,9 @@
-const Router = require("express")
+import Router from "express"
+
+import { create, getAll } from "../controllers/brandController"
 const router = new Router()
-const brandController = require("../controllers/brandController")
 
-router.post("/", brandController.create)
-router.get("/", brandController.getAll)
+router.post("/", create)
+router.get("/", getAll)
 
-module.exports = router
+export default router

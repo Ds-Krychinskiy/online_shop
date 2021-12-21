@@ -1,5 +1,5 @@
-const {Brand} = require("../models/models")
-const ApiError = require("../error/ApiError")
+import { Brand } from "../models/models"
+import ApiError from "../error/ApiError"
 
 class BrandController {
     async create(req, res) {
@@ -14,4 +14,4 @@ class BrandController {
     
 }
 
-module.exports = new BrandController()
+export default new BrandController()

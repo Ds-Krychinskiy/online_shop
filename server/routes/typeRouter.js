@@ -1,8 +1,9 @@
-const Router = require("express")
+import Router from "express"
 const router = new Router()
-const typeController = require("../controllers/typeController")
+import { create, getAll } from "../controllers/typeController"
+import checkRole from "../middleware/checkRoleMiddleware"
 
-router.post("/", typeController.create)
-router.get("/", typeController.getAll)
+router.post("/", checkRole("ADMIN"), create)
+router.get("/", getAll)
 
-module.exports = router
+export default router
