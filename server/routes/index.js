@@ -1,9 +1,9 @@
 import Router from "express"
 const router = new Router()
-import deviceRouter from "./deviceRouter"
-import userRouter from "./userRouter"
-import brandRouter from "./brandRouter"
-import typeRouter from "./typeRouter"
+import deviceRouter from "./deviceRouter.js"
+import userRouter from "./userRouter.js"
+import brandRouter from "./brandRouter.js"
+import typeRouter from "./typeRouter.js"
 
 router.use("/user", userRouter)
 router.use("/type", typeRouter)

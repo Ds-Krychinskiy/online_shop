@@ -1,4 +1,4 @@
-import { verify } from "jsonwebtoken"
+import jwt from "jsonwebtoken"
 
 
 export default function (role) {
@@ -11,7 +11,7 @@ export default function (role) {
             if(!token) {
                return res.status(401).json({message: "Не авторизован"})
             }
-            const decoded = verify(token, process.env.SECRET_KEY)
+            const decoded = jwt.verify(token, process.env.SECRET_KEY)
             if(decoded.role !== role){
                 return res.status(403).json({message: "Нет доступа"})
             }

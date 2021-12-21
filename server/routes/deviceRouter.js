@@ -1,10 +1,10 @@
 import Router from "express"
 const router = new Router()
-import { create, getAll, getOne } from "../controllers/deviceController"
+import deviceController from "../controllers/deviceController.js"
 
 
-router.post("/", create)
-router.get("/", getAll)
-router.get("/:id", getOne)
+router.post("/", deviceController.create)
+router.get("/", deviceController.getAll)
+router.get("/:id", deviceController.getOne)
 
 export default router

@@ -1,5 +1,5 @@
-import { Brand } from "../models/models"
-import ApiError from "../error/ApiError"
+import { Brand } from "../models/models.js"
+import ApiError from "../error/ApiError.js"
 
 class BrandController {
     async create(req, res) {

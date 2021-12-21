@@ -1,10 +1,10 @@
-import { badRequest, internal } from "../error/ApiError";
+import ApiError  from "../error/ApiError.js";
 import { hash, compareSync } from "bcrypt";
-import { sign } from "jsonwebtoken";
-import { User, Basket } from "../models/models";
+import jwt from "jsonwebtoken";
+import { User, Basket } from "../models/models.js";
 
 const generateJwt = (id, email, role) => {
-    return sign(
+    return jwt.sign(
         {id, email, role},
         process.env.SECRET_KEY,
         {expiresIn: "24h"}
@@ -19,7 +19,7 @@ class UserController {
         }
         const candidate = await User.findOne({where: {email}})
         if(candidate) {
-            return next(badRequest("Пользователь с таким email уже существует"))
+            return next(ApiError.badRequest("Пользователь с таким email уже существует"))
         }
         const hashPassword = await hash(password, 5)
         const user = await User.create({email, role, password: hashPassword})
@@ -31,11 +31,11 @@ class UserController {
         const {email, password} = req.body
         const user = await User.findOne({where: {email}})
         if(!user) {
-            return next(internal("Пользователь не найден"))
+            return next(ApiError.internal("Пользователь не найден"))
         }
         let comparePassword = compareSync(password, user.password)
         if(!comparePassword) {
-            return next(internal("Указан неверный пароль"))
+            return next(ApiError.internal("Указан неверный пароль"))
         }
         const token = generateJwt(user.id, user.email, user.role)
         return res.json({token})

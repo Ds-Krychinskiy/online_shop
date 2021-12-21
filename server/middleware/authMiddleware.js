@@ -1,4 +1,4 @@
-import { verify } from "jsonwebtoken"
+import jwt from "jsonwebtoken"
 
 
 export default function (req, res, next) {
@@ -10,7 +10,7 @@ export default function (req, res, next) {
         if(!token) {
            return res.status(401).json({message: "Не авторизован"})
         }
-        const decoded = verify(token, process.env.SECRET_KEY)
+        const decoded = jwt.verify(token, process.env.SECRET_KEY)
         req.user = decoded
         next()
     } catch (e) {
