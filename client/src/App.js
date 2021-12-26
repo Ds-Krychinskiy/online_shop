@@ -1,14 +1,10 @@
-import Typography from "./components/atoms/typography/index"
-
+import Header from "./components/organism/header";
 const App = () => {
   return (
-  <>
-<Typography>
-      Салат
-    </Typography>
-  </>
-    
+    <>
+      <Header></Header>
+    </>
   );
-}
+};
 
 export default App;

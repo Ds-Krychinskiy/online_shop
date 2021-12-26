@@ -1,12 +1,7 @@
-import styled from "styled-components";
+import { TypographyStyle } from "./style";
 
-const TypographyStyle = styled.p`
-`;
-
-const Typography = ({children}) => {
-    return (
-        <TypographyStyle>{children}</TypographyStyle>
-    )
-}
+const Typography = ({ children }) => {
+  return <TypographyStyle>{children}</TypographyStyle>;
+};
 
 export default Typography;

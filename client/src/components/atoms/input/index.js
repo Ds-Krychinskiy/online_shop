@@ -1,10 +1,7 @@
-import styled from "styled-components";
+import { InputStyle } from "./style";
 
-const InputStyle = styled.input`
-  
-`;
 const Input = () => {
-    return(<InputStyle></InputStyle>)
-}
+  return <InputStyle></InputStyle>;
+};
 
 export default Input;
