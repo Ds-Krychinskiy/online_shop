@@ -5,8 +5,8 @@ import Button from "../../atoms/button";
 const InputMolecule = () => {
   return (
     <InputMoleculeStyle>
-      <Input></Input>
-      <Button>Искать</Button>
+      <Input />
+      <Button label={"Искать"} />
     </InputMoleculeStyle>
   );
 };
