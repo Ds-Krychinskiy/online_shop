@@ -1,13 +1,19 @@
 import React from "react";
-import { HeaderWrapper } from "./style";
+import { HeaderWrapper, LabelWrapper, NavBarWrapper } from "./style";
 import HeaderTop from "./header_top";
 import HeaderBotoom from "./header_bottom";
+import Typography from "../../atoms/typography";
 
 const Header = () => {
   return (
     <HeaderWrapper>
-      <HeaderTop />
-      <HeaderBotoom />
+      <LabelWrapper>
+        <Typography variant={"header"}>New Labirint</Typography>
+      </LabelWrapper>
+      <NavBarWrapper>
+        <HeaderTop />
+        <HeaderBotoom />
+      </NavBarWrapper>
     </HeaderWrapper>
   );
 };
