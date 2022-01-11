@@ -8,7 +8,11 @@ export const InputStyle = styled.input`
   padding: 0px;
   padding-left: 10px;
   border-radius: 5px 0px 0px 5px;
-  ::focus {
+
+  :focus {
     border: 0px solid white;
+    ::placeholder {
+      color: white;
+    }
   }
 `;

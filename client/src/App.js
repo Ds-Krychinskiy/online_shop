@@ -1,7 +1,8 @@
-import Pages from "./components/pages";
+// import Pages from "./components/pages";
+import Registration from "./components/tempates/registration/index";
 
 const App = () => {
-  return <Pages />;
+  return <Registration />;
 };
 
 export default App;

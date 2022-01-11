@@ -1,7 +1,7 @@
 import { InputStyle } from "./style";
 
-const Input = () => {
-  return <InputStyle />;
+const Input = ({ placeholder, type }) => {
+  return <InputStyle type={type} placeholder={placeholder} />;
 };
 
 export default Input;

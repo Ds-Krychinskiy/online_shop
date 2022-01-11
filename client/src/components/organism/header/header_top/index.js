@@ -8,14 +8,28 @@ const HeaderTop = () => {
   return (
     <TopWrapper>
       <InputMolecule variant={"search"} />
-      {Admin ? <LinkPrototype variant={"link"} way={`/${routes.Admin}`} label={"Панель Админа"} /> : null}
+      {Admin ? (
+        <LinkPrototype
+          variant={"link"}
+          way={`/${routes.Admin}`}
+          label={"Панель Админа"}
+        />
+      ) : null}
       <LinkPrototype
         variant={"link"}
         way={`/${routes.Basket}`}
         label={"Корзина"}
       />
-      <LinkPrototype variant={"link"} way={`/${routes.Profile}`} label={"Профиль"} /> 
-      <LinkPrototype variant={"link"} way={`/${routes.Deferred}`} label={"Отложено"} />
+      <LinkPrototype
+        variant={"link"}
+        way={`/${routes.Profile}`}
+        label={"Профиль"}
+      />
+      <LinkPrototype
+        variant={"link"}
+        way={`/${routes.Deferred}`}
+        label={"Отложено"}
+      />
     </TopWrapper>
   );
 };

@@ -38,42 +38,27 @@ const Pages = () => {
         </Routes>
         {ListBook.map((el) => (
           <Routes>
-            <Route
-              path={`/${el.way}`}
-              element={<Product label={el.label} />}
-            />
+            <Route path={`/${el.way}`} element={<Product label={el.label} />} />
           </Routes>
         ))}
         {GamesList.map((el) => (
           <Routes>
-            <Route
-              path={`/${el.way}`}
-              element={<Product label={el.label} />}
-            />
+            <Route path={`/${el.way}`} element={<Product label={el.label} />} />
           </Routes>
         ))}
         {SchoolList.map((el) => (
           <Routes>
-            <Route
-              path={`/${el.way}`}
-              element={<Product label={el.label} />}
-            />
+            <Route path={`/${el.way}`} element={<Product label={el.label} />} />
           </Routes>
         ))}
         {Сhancellery.map((el) => (
           <Routes>
-            <Route
-              path={`/${el.way}`}
-              element={<Product label={el.label} />}
-            />
+            <Route path={`/${el.way}`} element={<Product label={el.label} />} />
           </Routes>
         ))}
         {Remain.map((el) => (
           <Routes>
-            <Route
-              path={`/${el.way}`}
-              element={<Product label={el.label} />}
-            />
+            <Route path={`/${el.way}`} element={<Product label={el.label} />} />
           </Routes>
         ))}
       </Router>

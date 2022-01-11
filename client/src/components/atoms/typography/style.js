@@ -24,10 +24,9 @@ export const LinkStyle = styled.p`
   border: 0px;
   color: white;
   font-size: 20px;
-
 `;
 
 export const HeaderStyle = styled.p`
   font-size: 35px;
   color: white;
-`
+`;

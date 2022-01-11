@@ -1,9 +1,5 @@
-
-
-const Profile = ({message}) => {
-    return(
-        <div>{message}</div>
-    )
-}
+const Profile = ({ message }) => {
+  return <div>{message}</div>;
+};
 
 export default Profile;

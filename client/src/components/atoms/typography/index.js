@@ -1,4 +1,9 @@
-import { TypographyStyle, LinkStyle, DropListStyle, HeaderStyle } from "./style";
+import {
+  TypographyStyle,
+  LinkStyle,
+  DropListStyle,
+  HeaderStyle,
+} from "./style";
 
 const Typography = ({ children, variant }) => {
   switch (variant) {
@@ -10,7 +15,7 @@ const Typography = ({ children, variant }) => {
       return <div></div>;
     case "publishing-house":
       return <div></div>;
-      case "header":
+    case "header":
       return <HeaderStyle>{children}</HeaderStyle>;
     default:
       return <TypographyStyle>{children}</TypographyStyle>;
