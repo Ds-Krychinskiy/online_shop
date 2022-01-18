@@ -5,6 +5,7 @@ export const TypographyStyle = styled.p`
   margin: 0px;
   border: 0px;
   color: black;
+  font-size: 25px;
 `;
 
 export const DropListStyle = styled.p`

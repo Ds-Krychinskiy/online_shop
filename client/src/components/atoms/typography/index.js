@@ -11,9 +11,9 @@ const Typography = ({ children, variant }) => {
       return <DropListStyle>{children}</DropListStyle>;
     case "link":
       return <LinkStyle>{children}</LinkStyle>;
-    case "author":
+    case "h1":
       return <div></div>;
-    case "publishing-house":
+    case "h2":
       return <div></div>;
     case "header":
       return <HeaderStyle>{children}</HeaderStyle>;

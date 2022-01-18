@@ -17,7 +17,7 @@ const DropDownList = ({ label, list }) => {
   return (
     <>
       <List component="nav" aria-labelledby="nested-list-subheader">
-        <ListItemButton onClick={handleClick}>
+        <ListItemButton onMouseMove={handleClick}>
           <Typography variant={"link"}>
             <ListItemText primary={label} />
           </Typography>

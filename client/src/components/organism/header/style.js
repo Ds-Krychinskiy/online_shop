@@ -21,3 +21,15 @@ export const NavBarWrapper = styled.div`
   max-width: 1600px;
   width: 100%;
 `;
+
+export const BottonWrapper = styled.div`
+  display: flex;
+  justify-content: space-around;
+`;
+
+export const TopWrapper = styled.div`
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 15px;
+`;

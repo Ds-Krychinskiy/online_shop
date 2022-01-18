@@ -4,10 +4,10 @@ import Button from "../../atoms/button";
 
 const InputMolecule = ({ variant }) => {
   switch (variant) {
-    case "basket":
+    case "count":
       return (
         <InputBasket>
-          <Input />
+          <Input variant={"count"} />
           <Button label={"+"} />
           <Button label={"-"} />
         </InputBasket>
@@ -15,7 +15,7 @@ const InputMolecule = ({ variant }) => {
     default:
       return (
         <InputSearch>
-          <Input />
+          <Input variant={"search"} placeholder={"Поиск..."} />
           <Button label={"Искать"} />
         </InputSearch>
       );

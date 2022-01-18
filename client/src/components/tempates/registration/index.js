@@ -4,11 +4,10 @@ import Typography from "./../../atoms/typography/index";
 const Registration = () => {
   return (
     <RegistrationStyle>
-      <Typography variant={"link"}>регистрация </Typography>
+      <Typography>Регистрация</Typography>
       <InputWrapper>
-        <Input  placeholder={"Введите имя"} />
+        <Input placeholder={"Введите имя"} />
       </InputWrapper>
-
       <InputWrapper>
         <Input placeholder={"Введите фамилию"} />
       </InputWrapper>
@@ -16,10 +15,10 @@ const Registration = () => {
         <Input placeholder={"Введите отчиство"} />
       </InputWrapper>
       <InputWrapper>
-        <Input placeholder={""} />
+        <Input placeholder={"Введите email"} />
       </InputWrapper>
       <InputWrapper>
-        <Input placeholder={"Введите  email"} />
+        <Input placeholder={"Введите номер телефон"} />
       </InputWrapper>
       <InputWrapper>
         <Input type={"password"} placeholder={"Введите пароль"} />

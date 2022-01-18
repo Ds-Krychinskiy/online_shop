@@ -1,10 +1,16 @@
-import Typography from "../../atoms/typography";
-
-const Basket = ({ message }) => {
+import Typography from "../../atoms/typography/index";
+import { BasketStyle } from "./style";
+const Basket = ({ message, get_product }) => {
   return (
-    <div>
+    <BasketStyle>
       <Typography>Ваш заказ {message}</Typography>
-    </div>
+      {get_product.map((el) => (
+        <>
+          <Typography>{el.name}</Typography>
+          <Typography>{el.price}</Typography>
+        </>
+      ))}
+    </BasketStyle>
   );
 };
 

@@ -1,13 +1,11 @@
 import { TemplateWrapper } from "./style";
 // import Card from "../../organism/card/index";
-import Typography from "../../atoms/typography";
+import Typography from "../../atoms/typography/index";
 
-const Product = ({ message, label }) => {
+const Product = ({ message }) => {
   return (
     <TemplateWrapper>
-      <Typography variant={"drop-list"}>{label}</Typography>
-      {message}
-      {/* <Card /> */}
+      <Typography variant={"drop-list"}>{message}</Typography>
     </TemplateWrapper>
   );
 };
