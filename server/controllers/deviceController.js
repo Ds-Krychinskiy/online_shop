@@ -7,7 +7,7 @@ import ApiError from "../error/ApiError.js";
 class DeviceController {
     async create(req, res, next) {
         try{
-            let {name, price, brandId, typeId, info} = req.body
+        let {name, price, brandId, typeId, info} = req.body
         const {img} = req.files
         let fileName = v4() + ".jpg"
         img.mv(resolve(__dirname, "..", "static", fileName))
