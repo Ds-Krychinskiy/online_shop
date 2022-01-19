@@ -1,5 +1,5 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 // import { GetProductFromServer } from "../../redux/reducers/GetProductReducer";
 
@@ -23,8 +23,11 @@ import Registration from "../tempates/registration";
 import AdminPanel from "../tempates/admin-panel";
 
 const Pages = () => {
-  const dispatch = useDispatch();
-  const get_product = useSelector((state) => state.get_product.product);
+
+
+    const listProductInBasket = useSelector((state)=> state.listProductInBasket)
+  // const dispatch = useDispatch();
+  // const get_product = useSelector((state) => state.get_product.product);
   // React.useEffect(() => {
   //   _axios
   //     .get(``)
@@ -33,6 +36,7 @@ const Pages = () => {
   //       console.log("Sorry, Bro");
   //     });
   // }, []);
+  console.log(listProductInBasket)
   return (
     <PageWrapper>
       <Router>
@@ -44,10 +48,7 @@ const Pages = () => {
           />
         </Routes>
         <Routes>
-          <Route
-            path={`/${routes.Basket}`}
-            element={<Basket get_product={get_product} />}
-          />
+          <Route path={`/${routes.Basket}`} element={<Basket />} />
         </Routes>
 
         <Routes>
@@ -57,10 +58,7 @@ const Pages = () => {
           />
         </Routes>
         <Routes>
-          <Route
-            path={`/${routes.Admin}`}
-            element={<AdminPanel />}
-          />
+          <Route path={`/${routes.Admin}`} element={<AdminPanel />} />
         </Routes>
         <Routes>
           <Route

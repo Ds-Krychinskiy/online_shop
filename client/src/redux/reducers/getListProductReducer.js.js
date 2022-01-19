@@ -4,7 +4,7 @@ const defaultState = {
 
 const GET_PRODUCT = "GET_PRODUCT";
 
-export const GetProductReducer = (state = defaultState, action) => {
+export const GetProductFromServerReducer = (state = defaultState, action) => {
   switch (action.type) {
     case GET_PRODUCT:
       return { ...state, product: action.payload };

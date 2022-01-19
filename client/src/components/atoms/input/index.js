@@ -1,11 +1,11 @@
 import { InputSearch, InputRegistration } from "./style";
 
-const Input = ({placeholder, type, variant, value, addProduct}) => {
-  const onChange = (name) => {
-    addProduct(name)
-  }
-
+const Input = ({ placeholder, type, variant, value, addProduct }) => {
   
+  const onChange = (name) => {
+    addProduct(name);
+  };
+
   switch (variant) {
     case "search":
       return <InputSearch type={type} placeholder={placeholder} />;
