@@ -7,13 +7,13 @@ const ADD_PRODUCT = "ADD_PRODUCT";
 export const addProductToBasketReducer = (state = defaultState, action) => {
   switch (action.type) {
     case ADD_PRODUCT:
-      return { ...state, product: action.payload };
+      return { ...state, basket: [...state.basket, action.payload] };
     default:
       return state;
   }
 };
 
-export const PostProductToBasket = (payload) => ({
+export const addProductToBasket = (payload) => ({
   type: ADD_PRODUCT,
   payload,
 });

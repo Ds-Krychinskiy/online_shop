@@ -4,6 +4,7 @@ export const HeaderWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   background-color: black;
+  width: 100%;
 `;
 
 export const LabelWrapper = styled.div`

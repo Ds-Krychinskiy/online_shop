@@ -16,11 +16,11 @@ export const addProductToServerReducer = (state = defaultState, action) => {
         name: action.payload.name,
         price: action.payload.price,
       };
-      case POST_PRODUCT:
+    case POST_PRODUCT:
       return {
         ...state,
         name: "",
-        price: ""
+        price: "",
       };
     default:
       return state;
@@ -35,4 +35,4 @@ export const addProductToServer = (payload) => ({
 export const PostProductToServer = (payload) => ({
   type: POST_PRODUCT,
   payload,
-})
+});

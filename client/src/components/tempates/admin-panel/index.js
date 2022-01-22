@@ -15,7 +15,6 @@ const AdminPanel = () => {
     dispatch(PostProductToServer({ name }));
   };
 
-  
   return (
     <AdminPanelStyle>
       <Input

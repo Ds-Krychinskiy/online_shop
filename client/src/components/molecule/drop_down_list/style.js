@@ -11,4 +11,5 @@ export const DropDownListWrapper = styled.div`
   padding-left: 15px;
   padding-right: 15px;
   position: absolute;
+  box-shadow: 0px 5px 20px 0px grey;
 `;

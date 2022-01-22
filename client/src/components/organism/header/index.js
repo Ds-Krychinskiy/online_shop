@@ -26,7 +26,11 @@ const Header = () => {
   return (
     <HeaderWrapper>
       <LabelWrapper>
-        <Typography variant={"header"}>New Labirint</Typography>
+        <LinkPrototype
+          variant={"link"}
+          way={"/"}
+          label={<Typography variant={"header"}>New Labirint</Typography>}
+        />
       </LabelWrapper>
       <NavBarWrapper>
         <TopWrapper>
