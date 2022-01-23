@@ -19,7 +19,7 @@ import {
   Remain,
 } from "../../../lists.js";
 
-const Header = () => {
+const Header = ({ deffered, basket }) => {
   const Admin = true;
   const Authorization = true;
 
@@ -52,12 +52,24 @@ const Header = () => {
               <LinkPrototype
                 variant={"link"}
                 way={`/${routes.Basket}`}
-                label={"Корзина"}
+                label={`${
+                  basket.lenght > 0 ? (
+                    <> ${basket.lenght + 1} "Корзина" </>
+                  ) : (
+                    "Корзина"
+                  )
+                }`}
               />
               <LinkPrototype
                 variant={"link"}
                 way={`/${routes.Deferred}`}
-                label={"Отложено"}
+                label={`${
+                  deffered.lenght > 0 ? (
+                    <>${deffered.lenght + 1} "Отложено"</>
+                  ) : (
+                    "Отложено"
+                  )
+                }`}
               />
             </>
           ) : (

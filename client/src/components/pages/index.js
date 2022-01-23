@@ -54,11 +54,10 @@ const Pages = () => {
     dispatch(addProductToDeferred(el));
   };
 
-  console.log(defferedProduct);
   return (
     <PageWrapper>
       <Router>
-        <Header />
+        <Header deffered={defferedProduct} basket={listProductInBasket} />
         <Routes>
           <Route
             path={"/"}

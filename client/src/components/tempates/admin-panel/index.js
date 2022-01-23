@@ -32,6 +32,13 @@ const AdminPanel = () => {
         placeholder={"Введите автора"}
         value={brand}
       />
+      <Input addProduct={addProduct} placeholder={"Введите издателя"} />
+      <Input
+        type={"file"}
+        addProduct={addProduct}
+        placeholder={"Добавить изображение товара"}
+      />
+
       <Button />
     </AdminPanelStyle>
   );
