@@ -4,7 +4,8 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { GetProductFromServer } from "../../redux/reducers/getListProductReducer.js";
 import { addProductToBasket } from "../../redux/reducers/basketProductReducer";
 import { addProductToDeferred } from "../../redux/reducers/deferredProductReducer";
-
+import { removeProductFromBasket } from "../../redux/reducers/basketProductReducer";
+import { removeProductFromDeffered } from "../../redux/reducers/deferredProductReducer";
 import * as routes from "./../../routes";
 import {
   GamesList,
@@ -40,7 +41,7 @@ const Pages = () => {
 
   React.useEffect(() => {
     _axios
-      .get(``)
+      .get(`/device`)
       .then((response) => dispatch(GetProductFromServer(response.data)))
       .catch((error) => {
         console.log("Sorry, Bro");
@@ -54,6 +55,13 @@ const Pages = () => {
     dispatch(addProductToDeferred(el));
   };
 
+  const removeProduct = (el) => {
+    dispatch(removeProductFromBasket(el));
+  };
+
+  const deleteProduct = (el) => {
+    dispatch(removeProductFromDeffered(el));
+  };
   return (
     <PageWrapper>
       <Router>
@@ -79,7 +87,9 @@ const Pages = () => {
         <Routes>
           <Route
             path={`/${routes.Basket}`}
-            element={<Basket product={listProductInBasket} />}
+            element={
+              <Basket product={listProductInBasket} remove={removeProduct} />
+            }
           />
         </Routes>
 
@@ -88,6 +98,7 @@ const Pages = () => {
             path={`/${routes.Deferred}`}
             element={
               <Deffered
+                remove={deleteProduct}
                 defferedProduct={defferedProduct}
                 addProduct={addProduct}
                 deferredProduct={deferredProduct}

@@ -1,8 +1,8 @@
 import { InputSearch, InputRegistration } from "./style";
 
 const Input = ({ placeholder, type, variant, value, addProduct }) => {
-  const onChange = (name) => {
-    addProduct(name);
+  const onChange = (value) => {
+    addProduct(value);
   };
 
   switch (variant) {

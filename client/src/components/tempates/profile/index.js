@@ -1,8 +1,8 @@
 import Typography from "../../atoms/typography";
-
+import {ProfileWrapper} from "./style"
 const Profile = () => {
   return (
-    <div>
+    <ProfileWrapper>
       <Typography>Мой профиль:</Typography>
       <Typography>Личные данные</Typography>
       <Typography>Фамилия: Кручинския </Typography>
@@ -10,7 +10,7 @@ const Profile = () => {
       <Typography>Отчиство: Сергеевич</Typography>
       <Typography>Эл.почта: ds.krychinskiy@gmail.com</Typography>
       <Typography>Телефон: 89138741522 </Typography>
-    </div>
+    </ProfileWrapper>
   );
 };
 

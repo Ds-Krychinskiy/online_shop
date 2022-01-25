@@ -3,43 +3,50 @@ import Input from "../../atoms/input";
 import Button from "../../atoms/button";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { PostProductToServer } from "../../../redux/reducers/adminPanelReducer";
+import { addProductToServer } from "../../../redux/reducers/adminPanelReducer";
+import axios from 'axios';
 
 const AdminPanel = () => {
   const dispatch = useDispatch();
   const post_product = useSelector((state) => state.post_product);
-  console.log(post_product);
-  const { name, price, brand, img } = post_product;
+  const { name, price, brand, publisher, img } = post_product;
 
-  const addProduct = (name) => {
-    dispatch(PostProductToServer({ name }));
+  const addProduct = (value, valueName) => {
+    dispatch(addProductToServer({valueName, value}));
   };
-
+  console.log(post_product)
+  const kek = () => {
+    axios.post(`https://jsonplaceholder.typicode.com/users`, { post_product })
+    .then(res => {
+      console.log(res);
+      console.log(res.data);
+    })
+  }
   return (
     <AdminPanelStyle>
       <Input
-        addProduct={addProduct}
+        addProduct={(value)=> addProduct(value, "name")}
         placeholder={"Введите название товара"}
         value={name}
       />
       <Input
-        addProduct={addProduct}
+        addProduct={(value)=> addProduct(value, "price")}
         placeholder={"Введите цену товара"}
         value={price}
       />
       <Input
-        addProduct={addProduct}
+        addProduct={(value)=> addProduct(value, "brand")}
         placeholder={"Введите автора"}
         value={brand}
       />
-      <Input addProduct={addProduct} placeholder={"Введите издателя"} />
+      <Input addProduct={(value)=> addProduct(value, "publisher")} value={publisher} placeholder={"Введите издателя"} />
       <Input
         type={"file"}
         addProduct={addProduct}
         placeholder={"Добавить изображение товара"}
       />
 
-      <Button />
+      <Button onClick={() => kek()}/>
     </AdminPanelStyle>
   );
 };
