@@ -22,6 +22,8 @@ import {
 const Header = ({ deffered, basket }) => {
   const Admin = true;
   const Authorization = true;
+  console.log(deffered)
+  console.log(basket)
 
   return (
     <HeaderWrapper>
@@ -52,24 +54,12 @@ const Header = ({ deffered, basket }) => {
               <LinkPrototype
                 variant={"link"}
                 way={`/${routes.Basket}`}
-                label={`${
-                  basket.lenght > 0 ? (
-                    <> ${basket.lenght + 1} "Корзина" </>
-                  ) : (
-                    "Корзина"
-                  )
-                }`}
+                label={"Корзина"}
               />
               <LinkPrototype
                 variant={"link"}
                 way={`/${routes.Deferred}`}
-                label={`${
-                  deffered.lenght > 0 ? (
-                    <>${deffered.lenght + 1} "Отложено"</>
-                  ) : (
-                    "Отложено"
-                  )
-                }`}
+                label={"Отложено"}
               />
             </>
           ) : (

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const BasketStyle = styled.div`
+export const BaskerWrapper = styled.div`
   max-width: 1440px;
   width: 100%;
   height: 100vh;
@@ -11,14 +11,26 @@ export const BasketStyle = styled.div`
   padding: 50px;
 `;
 
+export const BasketStyle = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1000px;
+  width: 100%;
+  max-height: 700px;
+  height: 100%;
+`;
+
 export const WrapperProduct = styled.div`
   display: flex;
   justify-content: space-around;
-  max-width: 1000px;
+  max-width: 900px;
   width: 100%;
-  max-height: 1000px;
+  max-height: 600px;
   height: 100%;
   margin-top: 50px;
-  box-shadow: 0px 2px 10px 10px grey;
-  padding: 30px;
+`;
+
+export const SumWrapper = styled.div`
+  display: flex;
 `;

@@ -1,9 +1,9 @@
 const defaultState = {
-    name: "",
-    price: "",
-    brand: "",
-    publisher: "",
-    img: "",
+  name: "",
+  price: "",
+  brand: "",
+  publisher: "",
+  img: "",
 };
 
 const ADD_PRODUCT = "ADD_PRODUCT";
@@ -14,8 +14,8 @@ export const addProductToServerReducer = (state = defaultState, action) => {
     case ADD_PRODUCT:
       return {
         ...state,
-        [action.payload.valueName]: action.payload.value
-      }
+        [action.payload.valueName]: action.payload.value,
+      };
     case POST_PRODUCT:
       return {
         ...state,

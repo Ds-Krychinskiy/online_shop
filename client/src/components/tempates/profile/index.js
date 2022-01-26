@@ -1,5 +1,5 @@
 import Typography from "../../atoms/typography";
-import {ProfileWrapper} from "./style"
+import { ProfileWrapper } from "./style";
 const Profile = () => {
   return (
     <ProfileWrapper>

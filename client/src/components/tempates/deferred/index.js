@@ -1,12 +1,14 @@
 import Card from "../../organism/card/index";
 import Typography from "../../atoms/typography/index";
-import { DeferredStyled } from "./style";
+import { DeferredWrapper, DeferredStyled } from "./style";
 
 const Deffered = ({ defferedProduct, addProduct, deferredProduct, remove }) => {
   return (
-    <DeferredStyled>
+    <DeferredWrapper>
+      <Typography>Отложенные товары</Typography>
+
       {defferedProduct.length > 0 ? (
-        <>
+        <DeferredStyled>
           {defferedProduct.map((el) => (
             <Card
               variant={"deffered"}
@@ -19,11 +21,11 @@ const Deffered = ({ defferedProduct, addProduct, deferredProduct, remove }) => {
               addInDeferred={() => deferredProduct(el)}
             />
           ))}
-        </>
+        </DeferredStyled>
       ) : (
         <Typography>Список отложенных товаров пуст!</Typography>
       )}
-    </DeferredStyled>
+    </DeferredWrapper>
   );
 };
 

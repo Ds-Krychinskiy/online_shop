@@ -9,4 +9,4 @@ export const ProfileWrapper = styled.div`
   align-items: center;
   box-shadow: 0px 2px 50px 10px grey;
   padding: 50px;
-`
+`;
