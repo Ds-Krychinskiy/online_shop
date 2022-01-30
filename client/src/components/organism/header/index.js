@@ -5,10 +5,12 @@ import {
   NavBarWrapper,
   BottonWrapper,
   TopWrapper,
+  SearchWrapper,
 } from "./style";
 import Typography from "../../atoms/typography";
+import Input from "../../atoms/input/index";
+import Button from "../../atoms/button/index";
 import DropDownList from "../../molecule/drop_down_list/index";
-import InputMolecule from "../../molecule/input/index";
 import LinkPrototype from "../../atoms/link/index";
 import * as routes from "../../../routes";
 import {
@@ -19,11 +21,9 @@ import {
   Remain,
 } from "../../../lists.js";
 
-const Header = ({ deffered, basket }) => {
+const Header = () => {
   const Admin = true;
   const Authorization = true;
-  console.log(deffered)
-  console.log(basket)
 
   return (
     <HeaderWrapper>
@@ -36,7 +36,13 @@ const Header = ({ deffered, basket }) => {
       </LabelWrapper>
       <NavBarWrapper>
         <TopWrapper>
-          <InputMolecule variant={"search"} />
+          <SearchWrapper>
+            <Input
+              variant={"search"}
+              placeholder={"Введите название книги..."}
+            />
+            <Button label={"Искать..."} />
+          </SearchWrapper>
           {Admin ? (
             <LinkPrototype
               variant={"link"}

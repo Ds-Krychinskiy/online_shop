@@ -1,9 +1,8 @@
-import { TemplateWrapper } from "./style";
 import Card from "../../organism/card/index";
 
 const Home = ({ get_product, addProduct, deferredProduct }) => {
   return (
-    <TemplateWrapper>
+    <>
       {get_product.map((el) => (
         <Card
           key={el.id}
@@ -14,7 +13,7 @@ const Home = ({ get_product, addProduct, deferredProduct }) => {
           addInDeferred={() => deferredProduct(el)}
         />
       ))}
-    </TemplateWrapper>
+    </>
   );
 };
 

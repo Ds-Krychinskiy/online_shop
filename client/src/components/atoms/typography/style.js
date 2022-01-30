@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
-export const TypographyStyle = styled.p`
+export const ErrorStyle = styled.p`
   padding: 0px;
   margin: 0px;
   border: 0px;
-  color: black;
+  color: red;
   font-size: 25px;
 `;
 
@@ -30,4 +30,8 @@ export const LinkStyle = styled.p`
 export const HeaderStyle = styled.p`
   font-size: 35px;
   color: white;
+`;
+
+export const H1 = styled.p`
+  font-size: 25px;
 `;

@@ -8,7 +8,7 @@ const Input = ({ placeholder, type, variant, value, addProduct }) => {
   switch (variant) {
     case "search":
       return <InputSearch type={type} placeholder={placeholder} />;
-    default:
+    case "admin-panel":
       return (
         <InputRegistration
           onChange={(event) => onChange(event.target.value)}
@@ -17,6 +17,8 @@ const Input = ({ placeholder, type, variant, value, addProduct }) => {
           type={type}
         ></InputRegistration>
       );
+    default:
+      return <InputSearch type={type} placeholder={placeholder}></InputSearch>;
   }
 };
 

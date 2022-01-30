@@ -1,6 +1,6 @@
 import { ProductStyle } from "./style";
 
-const Product = ({ history, id }) => {
+const Product = ({}) => {
   return <ProductStyle></ProductStyle>;
 };
 

@@ -1,9 +1,4 @@
-import {
-  BaskerWrapper,
-  WrapperProduct,
-  SumWrapper,
-  BasketStyle,
-} from "./style";
+import { WrapperProduct, SumWrapper, BasketStyle } from "./style";
 import Card from "../../organism/card/index";
 import Typography from "../../atoms/typography/index";
 const Basket = ({ product, remove }) => {
@@ -11,12 +6,11 @@ const Basket = ({ product, remove }) => {
     return acc + el.price;
   }, 0);
 
-  console.log(product.length);
   return (
-    <BaskerWrapper>
+    <>
       {product.length > 0 ? (
         <>
-          <Typography>Ваш заказ</Typography>
+          <Typography variant={"h1"}>Ваш заказ</Typography>
           <BasketStyle>
             <WrapperProduct>
               {product.map((el) => (
@@ -47,7 +41,7 @@ const Basket = ({ product, remove }) => {
           </Typography>
         </>
       )}
-    </BaskerWrapper>
+    </>
   );
 };
 

@@ -14,11 +14,12 @@ import {
   Сhancellery,
   Remain,
 } from "./../../lists.js";
-import { PageWrapper } from "./style";
+import { PageWrapper, Container, ComponentWrapper } from "./style";
 import _axios from "../../axios";
 
 import Header from "../organism/header/index";
 import Profile from "../tempates/profile/index";
+import Product from "../tempates/product/index";
 import Basket from "../tempates/basket/index";
 import Authorization from "../tempates/authorization";
 import Registration from "../tempates/registration";
@@ -35,7 +36,7 @@ const Pages = () => {
     (state) => state.listProductInBasket.basket
   );
 
-  const defferedProduct = useSelector(
+  const listdefferedProduct = useSelector(
     (state) => state.listDeferredProduct.deferred
   );
 
@@ -44,7 +45,7 @@ const Pages = () => {
       .get(`/device`)
       .then((response) => dispatch(GetProductFromServer(response.data)))
       .catch((error) => {
-        console.log("Sorry, Bro");
+        console.log(error);
       });
   }, []);
 
@@ -65,85 +66,135 @@ const Pages = () => {
   return (
     <PageWrapper>
       <Router>
-        <Header deffered={defferedProduct} basket={listProductInBasket} />
-        <Routes>
-          <Route
-            path={"/"}
-            element={
-              <Home
-                get_product={get_product}
-                addProduct={addProduct}
-                deferredProduct={deferredProduct}
-              />
-            }
-          />
-        </Routes>
-        <Routes>
-          <Route
-            path={`/${routes.Profile}`}
-            element={<Profile message={"Профиль"} />}
-          />
-        </Routes>
-        <Routes>
-          <Route
-            path={`/${routes.Basket}`}
-            element={
-              <Basket product={listProductInBasket} remove={removeProduct} />
-            }
-          />
-        </Routes>
+        <Header basket={listProductInBasket} />
+        <Container>
+          <Routes>
+            <Route
+              path={"/"}
+              element={
+                <ComponentWrapper>
+                  <Home
+                    get_product={get_product}
+                    addProduct={addProduct}
+                    deferredProduct={deferredProduct}
+                  />
+                </ComponentWrapper>
+              }
+            />
+          </Routes>
+          <Routes>
+            <Route
+              path={`/${routes.Profile}`}
+              element={
+                <ComponentWrapper>
+                  <Profile message={"Профиль"} />
+                </ComponentWrapper>
+              }
+            />
+          </Routes>
+          <Routes>
+            <Route
+              path={`/${routes.Basket}`}
+              element={
+                <ComponentWrapper>
+                  <Basket
+                    product={listProductInBasket}
+                    remove={removeProduct}
+                  />
+                </ComponentWrapper>
+              }
+            />
+          </Routes>
 
-        <Routes>
-          <Route
-            path={`/${routes.Deferred}`}
-            element={
-              <Deffered
-                remove={deleteProduct}
-                defferedProduct={defferedProduct}
-                addProduct={addProduct}
-                deferredProduct={deferredProduct}
-              />
-            }
-          />
-        </Routes>
-        <Routes>
-          <Route path={`/${routes.Admin}`} element={<AdminPanel />} />
-        </Routes>
-        <Routes>
-          <Route
-            path={`/${routes.Authorization}`}
-            element={<Authorization />}
-          />
-        </Routes>
-        <Routes>
-          <Route path={`/${routes.Registration}`} element={<Registration />} />
-        </Routes>
+          <Routes>
+            <Route
+              path={`/${routes.Deferred}`}
+              element={
+                <ComponentWrapper>
+                  <Deffered
+                    remove={deleteProduct}
+                    listdefferedProduct={listdefferedProduct}
+                    addProduct={addProduct}
+                    deferredProduct={deferredProduct}
+                  />
+                </ComponentWrapper>
+              }
+            />
+          </Routes>
 
-        {ListBook.map((el) => (
           <Routes>
-            <Route path={`/${el.way}`} element={<Home label={el.label} />} />
+            <Route
+              path={`/${routes.Admin}`}
+              element={
+                <ComponentWrapper>
+                  <AdminPanel />
+                </ComponentWrapper>
+              }
+            />
           </Routes>
-        ))}
-        {GamesList.map((el) => (
+
           <Routes>
-            <Route path={`/${el.way}`} element={<Home label={el.label} />} />
+            <Route
+              path={`/${routes.Authorization}`}
+              element={
+                <ComponentWrapper>
+                  <Authorization />
+                </ComponentWrapper>
+              }
+            />
           </Routes>
-        ))}
-        {SchoolList.map((el) => (
           <Routes>
-            <Route path={`/${el.way}`} element={<Home label={el.label} />} />
+            <Route
+              path={`/${routes.Registration}`}
+              element={
+                <ComponentWrapper>
+                  <Registration />
+                </ComponentWrapper>
+              }
+            />
           </Routes>
-        ))}
-        {Сhancellery.map((el) => (
-          <Routes>
-            <Route path={`/${el.way}`} element={<Home label={el.label} />} />
-          </Routes>
-        ))}
-        {Remain.map((el) => (
-          <Routes>
-            <Route path={`/${el.way}`} element={<Home label={el.label} />} />
-          </Routes>
-        ))}
+
+          {ListBook.map((el) => (
+            <Routes>
+              <Route
+                path={`/${el.way}`}
+                element={<Product label={el.label} />}
+              />
+            </Routes>
+          ))}
+          {GamesList.map((el) => (
+            <Routes>
+              <Route
+                path={`/${el.way}`}
+                element={<Product label={el.label} />}
+              />
+            </Routes>
+          ))}
+          {SchoolList.map((el) => (
+            <Routes>
+              <Route
+                path={`/${el.way}`}
+                element={<Product label={el.label} />}
+              />
+            </Routes>
+          ))}
+          {Сhancellery.map((el) => (
+            <Routes>
+              <Route
+                path={`/${el.way}`}
+                element={<Product label={el.label} />}
+              />
+            </Routes>
+          ))}
+          {Remain.map((el) => (
+            <Routes>
+              <Route
+                path={`/${el.way}`}
+                element={<Product label={el.label} />}
+              />
+            </Routes>
+          ))}
+        </Container>
       </Router>
     </PageWrapper>
   );

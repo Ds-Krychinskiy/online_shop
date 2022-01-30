@@ -34,3 +34,14 @@ export const TopWrapper = styled.div`
   align-items: center;
   padding-top: 15px;
 `;
+
+export const SearchWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  max-width: 600px;
+  width: 100%;
+  max-height: 60px;
+  height: 100%;
+  background-color: white;
+  border-radius: 5px;
+`;
