@@ -1,8 +1,14 @@
 import { LinkWrapper } from "./style";
 import { Link } from "react-router-dom";
-import Typography from "./../typography/index";
+import Typography from "../typography/index";
 
-const LinkPrototype = ({ way, label, variant }) => {
+interface ILinkProps {
+  way: string;
+  label: string | JSX.Element;
+  variant: string;
+}
+
+const LinkPrototype: React.FC<ILinkProps> = ({ way, label, variant }) => {
   return (
     <LinkWrapper>
       <Link to={way} style={{ textDecoration: "none" }}>

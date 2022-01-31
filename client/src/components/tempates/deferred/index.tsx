@@ -2,10 +2,17 @@ import Card from "../../organism/card/index";
 import Typography from "../../atoms/typography/index";
 import { DeferredStyled } from "./style";
 
-const Deffered = ({
+interface IDefferedProps {
+  listdefferedProduct: [];
+  addProduct: (el: any) => void;
+  defferedPropduct: (el: any) => void;
+  remove: (id: number) => void;
+}
+
+const Deffered: React.FC<IDefferedProps> = ({
   listdefferedProduct,
   addProduct,
-  deferredProduct,
+  defferedPropduct,
   remove,
 }) => {
   return (
@@ -23,12 +30,12 @@ const Deffered = ({
               rating={el.rating}
               remove={() => remove(el.id)}
               addInBasket={() => addProduct(el)}
-              addInDeferred={() => deferredProduct(el)}
+              addInDeferred={() => defferedPropduct(el)}
             />
           ))}
         </DeferredStyled>
       ) : (
-        <Typography>Список отложенных товаров пуст!</Typography>
+        <Typography variant={"h1"}>Список отложенных товаров пуст!</Typography>
       )}
     </>
   );

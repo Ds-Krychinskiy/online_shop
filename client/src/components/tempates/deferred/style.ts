@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-
 export const DeferredStyled = styled.div`
   display: flex;
   justify-content: space-between;

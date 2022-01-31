@@ -1,15 +1,19 @@
-import Button from "../../atoms/button";
+import Button from "../../atoms/button/index";
 import { CardWrapper, ButtonWrapper } from "./style";
 
-const Card = ({
-  name,
-  price,
-  rating,
-  addInBasket,
-  addInDeferred,
-  variant,
-  remove,
-}) => {
+interface ICardProps {
+  name: string;
+  price: number;
+  rating: string;
+  variant: string;
+  addInBasket?: () => void;
+  addInDeferred?: () => void;
+  remove?: () => void;
+}
+
+const Card: React.FC<ICardProps> = ({ ...props }) => {
+  const { name, price, rating, addInBasket, addInDeferred, variant, remove } =
+    props;
   switch (variant) {
     case "basket":
       return (
@@ -33,7 +37,7 @@ const Card = ({
           </ButtonWrapper>
         </CardWrapper>
       );
-    default:
+    case "general":
       return (
         <CardWrapper>
           <p>{price}</p>

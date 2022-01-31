@@ -1,4 +1,10 @@
-export const ListBook = [
+export interface IListProps {
+  label: string;
+  key: number;
+  way: string;
+}
+
+export const ListBook: IListProps[] = [
   {
     label: "Все книги",
     key: 1,
@@ -51,7 +57,7 @@ export const ListBook = [
   },
 ];
 
-export const SchoolList = [
+export const SchoolList: IListProps[] = [
   {
     label: "Русский язык",
     key: 1,
@@ -98,7 +104,7 @@ export const SchoolList = [
     way: "geography",
   },
 ];
-export const GamesList = [
+export const GamesList: IListProps[] = [
   {
     label: "Всё игрушки",
     key: 1,

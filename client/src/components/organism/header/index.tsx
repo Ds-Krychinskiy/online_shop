@@ -38,10 +38,11 @@ const Header = () => {
         <TopWrapper>
           <SearchWrapper>
             <Input
+              type={"text"}
               variant={"search"}
               placeholder={"Введите название книги..."}
             />
-            <Button label={"Искать..."} />
+            <Button label={"Искать..."} onClick={() => console.log("search")} />
           </SearchWrapper>
           {Admin ? (
             <LinkPrototype

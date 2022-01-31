@@ -1,10 +1,14 @@
 import { FormWrapper } from "./style";
 import LinkPrototype from "../../atoms/link";
-import * as routes from "./../../../routes";
+import * as routes from "../../../routes";
 import Typography from "../../atoms/typography";
 import { useForm } from "react-hook-form";
+import React from "react";
 
-const Form = ({ variant }) => {
+interface IFormProps {
+  variant: string;
+}
+const Form: React.FC<IFormProps> = ({ variant }) => {
   const {
     register,
     handleSubmit,
@@ -20,7 +24,7 @@ const Form = ({ variant }) => {
     case "registration":
       return (
         <FormWrapper onSubmit={handleSubmit(onSubmit)}>
-          <Typography>Регистрация</Typography>
+          <Typography variant={""}>Регистрация</Typography>
           <input
             {...register("email", { required: true })}
             placeholder={"Введите email"}
@@ -64,7 +68,7 @@ const Form = ({ variant }) => {
     case "autorization":
       return (
         <FormWrapper onSubmit={handleSubmit(onSubmit)}>
-          <Typography>Авторизация</Typography>
+          <Typography variant={""}>Авторизация</Typography>
           <input
             {...register("email", { required: true })}
             placeholder={"Введите email"}
@@ -90,6 +94,7 @@ const Form = ({ variant }) => {
           </div>
           <input type={"submit"} disabled={!isValid} />
           <LinkPrototype
+            variant={""}
             way={`/${routes.Registration}`}
             label={"Регистрация"}
           />

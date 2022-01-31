@@ -1,6 +1,18 @@
 import { InputSearch, InputRegistration } from "./style";
-
-const Input = ({ placeholder, type, variant, value, addProduct }) => {
+interface IInputProps {
+  placeholder: string;
+  type: string;
+  variant: string;
+  value?: string;
+  addProduct?: (name: string) => void;
+}
+const Input: React.FC<IInputProps> = ({
+  placeholder,
+  type,
+  variant,
+  value,
+  addProduct,
+}) => {
   const onChange = (value) => {
     addProduct(value);
   };

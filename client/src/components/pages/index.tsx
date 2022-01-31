@@ -6,14 +6,14 @@ import { addProductToBasket } from "../../redux/reducers/basketProductReducer";
 import { addProductToDeferred } from "../../redux/reducers/deferredProductReducer";
 import { removeProductFromBasket } from "../../redux/reducers/basketProductReducer";
 import { removeProductFromDeffered } from "../../redux/reducers/deferredProductReducer";
-import * as routes from "./../../routes";
+import * as routes from "../../routes";
 import {
   GamesList,
   SchoolList,
   ListBook,
   Сhancellery,
   Remain,
-} from "./../../lists.js";
+} from "./../../lists";
 import { PageWrapper, Container, ComponentWrapper } from "./style";
 import _axios from "../../axios";
 
@@ -52,7 +52,7 @@ const Pages = () => {
   const addProduct = (el) => {
     dispatch(addProductToBasket(el));
   };
-  const deferredProduct = (el) => {
+  const defferedPropduct = (el) => {
     dispatch(addProductToDeferred(el));
   };
 
@@ -66,7 +66,7 @@ const Pages = () => {
   return (
     <PageWrapper>
       <Router>
-        <Header basket={listProductInBasket} />
+        <Header />
         <Container>
           <Routes>
             <Route
@@ -76,7 +76,7 @@ const Pages = () => {
                   <Home
                     get_product={get_product}
                     addProduct={addProduct}
-                    deferredProduct={deferredProduct}
+                    defferedPropduct={defferedPropduct}
                   />
                 </ComponentWrapper>
               }
@@ -87,7 +87,7 @@ const Pages = () => {
               path={`/${routes.Profile}`}
               element={
                 <ComponentWrapper>
-                  <Profile message={"Профиль"} />
+                  <Profile />
                 </ComponentWrapper>
               }
             />
@@ -115,7 +115,7 @@ const Pages = () => {
                     remove={deleteProduct}
                     listdefferedProduct={listdefferedProduct}
                     addProduct={addProduct}
-                    deferredProduct={deferredProduct}
+                    defferedPropduct={defferedPropduct}
                   />
                 </ComponentWrapper>
               }

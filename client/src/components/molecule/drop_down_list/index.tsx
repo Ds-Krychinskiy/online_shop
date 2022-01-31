@@ -6,8 +6,13 @@ import Collapse from "@mui/material/Collapse";
 import Typography from "../../atoms/typography";
 import LinkPrototype from "../../atoms/link";
 import { DropDownListWrapper } from "./style";
+import { IListProps } from "../../../lists";
 
-const DropDownList = ({ label, list }) => {
+interface IDropDownListProps {
+  label: string;
+  list: IListProps[];
+}
+const DropDownList: React.FC<IDropDownListProps> = ({ label, list }) => {
   const [open, setOpen] = React.useState(false);
 
   const handleClick = () => {

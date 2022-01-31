@@ -1,7 +1,13 @@
 import { WrapperProduct, SumWrapper, BasketStyle } from "./style";
 import Card from "../../organism/card/index";
 import Typography from "../../atoms/typography/index";
-const Basket = ({ product, remove }) => {
+
+interface IBasketProps {
+  product: [];
+  remove: (id: number) => void;
+}
+
+const Basket: React.FC<IBasketProps> = ({ product, remove }) => {
   let price = product.reduce((acc, el) => {
     return acc + el.price;
   }, 0);
@@ -25,17 +31,19 @@ const Basket = ({ product, remove }) => {
               ))}
             </WrapperProduct>
             <SumWrapper>
-              <Typography>
-                {product.length !== 0 ? product.length : null} Товара на сумму:{" "}
-                {price !== 0 ? price : null} рублей
+              <Typography variant={"h1"}>
+                <>
+                  {product.length !== 0 ? product.length : null} Товара на
+                  сумму: {price !== 0 ? price : null} рублей
+                </>
               </Typography>
             </SumWrapper>
           </BasketStyle>
         </>
       ) : (
         <>
-          <Typography>В корзине пока ничего нет!</Typography>
-          <Typography>
+          <Typography variant={"h1"}>В корзине пока ничего нет!</Typography>
+          <Typography variant={"h1"}>
             Начните с главной страницы или воспользуйтесь поиском, чтобы найти
             что-то конкретное
           </Typography>
