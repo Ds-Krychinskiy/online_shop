@@ -1,9 +1,9 @@
 import { WrapperProduct, SumWrapper, BasketStyle } from "./style";
 import Card from "../../organism/card/index";
 import Typography from "../../atoms/typography/index";
-
+import { IDefaulState } from "../../../redux/reducers/getListProductReducer";
 interface IBasketProps {
-  product: [];
+  product: IDefaulState[];
   remove: (id: number) => void;
 }
 
@@ -19,7 +19,7 @@ const Basket: React.FC<IBasketProps> = ({ product, remove }) => {
           <Typography variant={"h1"}>Ваш заказ</Typography>
           <BasketStyle>
             <WrapperProduct>
-              {product.map((el) => (
+              {product.map((el: IDefaulState) => (
                 <Card
                   remove={() => remove(el.id)}
                   variant={"basket"}

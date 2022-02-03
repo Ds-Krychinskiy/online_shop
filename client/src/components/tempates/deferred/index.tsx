@@ -1,11 +1,11 @@
 import Card from "../../organism/card/index";
 import Typography from "../../atoms/typography/index";
 import { DeferredStyled } from "./style";
-
+import { IDefaulState } from "../../../redux/reducers/getListProductReducer";
 interface IDefferedProps {
-  listdefferedProduct: [];
-  addProduct: (el: any) => void;
-  defferedPropduct: (el: any) => void;
+  listdefferedProduct: IDefaulState[];
+  addProduct: (el: IDefaulState) => void;
+  defferedPropduct: (el: IDefaulState) => void;
   remove: (id: number) => void;
 }
 
@@ -18,7 +18,6 @@ const Deffered: React.FC<IDefferedProps> = ({
   return (
     <>
       <Typography variant={"h1"}>Отложенные товары</Typography>
-
       {listdefferedProduct.length > 0 ? (
         <DeferredStyled>
           {listdefferedProduct.map((el) => (

@@ -1,5 +1,5 @@
 import { FormWrapper } from "./style";
-import LinkPrototype from "../../atoms/link";
+import LinkPrototype from "../../molecule/link";
 import * as routes from "../../../routes";
 import Typography from "../../atoms/typography";
 import { useForm } from "react-hook-form";

@@ -1,6 +1,7 @@
 import styled from "styled-components";
+import TextField from "@mui/material/TextField";
 
-export const InputSearch = styled.input`
+export const InputSearch = styled(TextField)`
   width: 100%;
   height: 100%;
   margin: 0px;
@@ -17,7 +18,7 @@ export const InputSearch = styled.input`
   }
 `;
 
-export const InputRegistration = styled.input`
+export const InputRegistration = styled(TextField)`
   border-radius: 5px;
   padding-left: 10px;
   :focus {

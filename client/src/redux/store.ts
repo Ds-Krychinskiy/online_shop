@@ -2,7 +2,7 @@ import { createStore } from "redux";
 import { combineReducers } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 
-import { GetProductFromServerReducer } from "./reducers/getListProductReducer.js";
+import { GetProductFromServerReducer } from "./reducers/getListProductReducer";
 import { addProductToBasketReducer } from "./reducers/basketProductReducer";
 import { deferredProductReducer } from "./reducers/deferredProductReducer";
 

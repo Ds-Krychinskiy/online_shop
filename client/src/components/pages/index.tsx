@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { GetProductFromServer } from "../../redux/reducers/getListProductReducer.js";
+import { GetProductFromServer } from "../../redux/reducers/getListProductReducer";
 import { addProductToBasket } from "../../redux/reducers/basketProductReducer";
 import { addProductToDeferred } from "../../redux/reducers/deferredProductReducer";
 import { removeProductFromBasket } from "../../redux/reducers/basketProductReducer";
@@ -27,18 +27,16 @@ import AdminPanel from "../tempates/admin-panel";
 import Deffered from "../tempates/deferred/index";
 import Home from "../tempates/home/index";
 
+import { IDefaulState } from "../../redux/reducers/getListProductReducer";
+
 const Pages = () => {
   const dispatch = useDispatch();
 
-  const get_product = useSelector((state) => state.get_product.product);
+  const get_product = useSelector((state: IDefaulState[]) => state);
 
-  const listProductInBasket = useSelector(
-    (state) => state.listProductInBasket.basket
-  );
+  const listProductInBasket = useSelector((state: IDefaulState[]) => state);
 
-  const listdefferedProduct = useSelector(
-    (state) => state.listDeferredProduct.deferred
-  );
+  const listdefferedProduct = useSelector((state: IDefaulState[]) => state);
 
   React.useEffect(() => {
     _axios
@@ -49,18 +47,18 @@ const Pages = () => {
       });
   }, []);
 
-  const addProduct = (el) => {
+  const addProduct = (el: IDefaulState) => {
     dispatch(addProductToBasket(el));
   };
-  const defferedPropduct = (el) => {
+  const defferedPropduct = (el: IDefaulState) => {
     dispatch(addProductToDeferred(el));
   };
 
-  const removeProduct = (el) => {
+  const removeProduct = (el: number) => {
     dispatch(removeProductFromBasket(el));
   };
 
-  const deleteProduct = (el) => {
+  const deleteProduct = (el: number) => {
     dispatch(removeProductFromDeffered(el));
   };
   return (

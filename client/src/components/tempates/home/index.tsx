@@ -1,16 +1,22 @@
 import Card from "../../organism/card/index";
+import { IDefaulState } from "../../../redux/reducers/getListProductReducer";
 
-interface IHomeProps{
-  get_product: [];
-  addProduct: (el: any) => void;
-  defferedPropduct: (el: any) => void;
+interface IHomeProps {
+  get_product: IDefaulState[];
+  addProduct: (el: IDefaulState) => void;
+  defferedPropduct: (el: IDefaulState) => void;
 }
 
-const Home: React.FC<IHomeProps> = ({ get_product, addProduct, defferedPropduct }) => {
+const Home: React.FC<IHomeProps> = ({
+  get_product,
+  addProduct,
+  defferedPropduct,
+}) => {
   return (
-      {get_product.map((el) => (
+    <>
+      {get_product.map((el: IDefaulState) => (
         <Card
-        variant={"general"}
+          variant={"general"}
           key={el.id}
           name={el.name}
           price={el.price}
@@ -19,6 +25,8 @@ const Home: React.FC<IHomeProps> = ({ get_product, addProduct, defferedPropduct 
           addInDeferred={() => defferedPropduct(el)}
         />
       ))}
+      ;
+    </>
   );
 };
 

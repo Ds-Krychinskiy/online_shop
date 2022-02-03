@@ -4,16 +4,15 @@ import { CardWrapper, ButtonWrapper } from "./style";
 interface ICardProps {
   name: string;
   price: number;
-  rating: string;
+  rating: number;
   variant: string;
-  addInBasket?: () => void;
-  addInDeferred?: () => void;
-  remove?: () => void;
+  addInBasket: () => void;
+  addInDeferred: () => void;
+  remove: () => void;
 }
 
-const Card: React.FC<ICardProps> = ({ ...props }) => {
-  const { name, price, rating, addInBasket, addInDeferred, variant, remove } =
-    props;
+const Card: React.FC<ICardProps> = ({ name, price, rating, addInBasket, addInDeferred, variant, remove  }) => {
+  
   switch (variant) {
     case "basket":
       return (

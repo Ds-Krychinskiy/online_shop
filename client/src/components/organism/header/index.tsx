@@ -11,7 +11,7 @@ import Typography from "../../atoms/typography";
 import Input from "../../atoms/input/index";
 import Button from "../../atoms/button/index";
 import DropDownList from "../../molecule/drop_down_list/index";
-import LinkPrototype from "../../atoms/link/index";
+import LinkPrototype from "../../molecule/link/index";
 import * as routes from "../../../routes";
 import {
   GamesList,
@@ -19,7 +19,7 @@ import {
   ListBook,
   Сhancellery,
   Remain,
-} from "../../../lists.js";
+} from "../../../lists";
 
 const Header = () => {
   const Admin = true;

@@ -3,14 +3,16 @@ interface IInputProps {
   placeholder: string;
   type: string;
   variant: string;
-  value?: string;
-  addProduct?: (name: string) => void;
+  value: string;
+  label: string;
+  addProduct: (name: string) => void;
 }
 const Input: React.FC<IInputProps> = ({
   placeholder,
   type,
   variant,
   value,
+  label,
   addProduct,
 }) => {
   const onChange = (value) => {
@@ -19,7 +21,13 @@ const Input: React.FC<IInputProps> = ({
 
   switch (variant) {
     case "search":
-      return <InputSearch type={type} placeholder={placeholder} />;
+      return (
+        <InputSearch
+          id="outlined-textarea"
+          label={label}
+          placeholder={placeholder}
+        />
+      );
     case "admin-panel":
       return (
         <InputRegistration
@@ -35,3 +43,11 @@ const Input: React.FC<IInputProps> = ({
 };
 
 export default Input;
+{
+  /* <TextField
+id="outlined-textarea"
+label="Multiline Placeholder"
+placeholder="Placeholder"
+multiline
+/> */
+}

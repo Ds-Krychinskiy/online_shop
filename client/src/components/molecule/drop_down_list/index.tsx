@@ -4,7 +4,7 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 import Collapse from "@mui/material/Collapse";
 import Typography from "../../atoms/typography";
-import LinkPrototype from "../../atoms/link";
+import LinkPrototype from "../link";
 import { DropDownListWrapper } from "./style";
 import { IListProps } from "../../../lists";
 

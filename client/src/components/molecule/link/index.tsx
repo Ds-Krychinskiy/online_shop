@@ -1,6 +1,5 @@
 import { LinkWrapper } from "./style";
-import { Link } from "react-router-dom";
-import Typography from "../typography/index";
+import Typography from "../../atoms/typography/index";
 
 interface ILinkProps {
   way: string;
@@ -10,10 +9,8 @@ interface ILinkProps {
 
 const LinkPrototype: React.FC<ILinkProps> = ({ way, label, variant }) => {
   return (
-    <LinkWrapper>
-      <Link to={way} style={{ textDecoration: "none" }}>
-        <Typography variant={variant}>{label}</Typography>
-      </Link>
+    <LinkWrapper to={way}>
+      <Typography variant={variant}>{label}</Typography>
     </LinkWrapper>
   );
 };
