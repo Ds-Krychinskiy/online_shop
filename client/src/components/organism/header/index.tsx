@@ -12,18 +12,13 @@ import Input from "../../atoms/input/index";
 import Button from "../../atoms/button/index";
 import DropDownList from "../../molecule/drop_down_list/index";
 import LinkPrototype from "../../molecule/link/index";
-import * as routes from "../../../routes";
-import {
-  GamesList,
-  SchoolList,
-  ListBook,
-  Сhancellery,
-  Remain,
-} from "../../../lists";
+import * as consts from "../../../consts";
+import { useTypedSelector } from "redux/hooks/useTypedSelector";
 
 const Header = () => {
   const Admin = true;
   const Authorization = true;
+  const { types } = useTypedSelector((state) => state.typeStore);
 
   return (
     <HeaderWrapper>
@@ -38,16 +33,21 @@ const Header = () => {
         <TopWrapper>
           <SearchWrapper>
             <Input
+              placeholder={"Поиск..."}
               type={"text"}
               variant={"search"}
-              placeholder={"Введите название книги..."}
+              onChange={(e) => console.log(e)}
+            ></Input>
+            <Button
+              variant={"search"}
+              label={"Искать..."}
+              onClick={() => console.log("search")}
             />
-            <Button label={"Искать..."} onClick={() => console.log("search")} />
           </SearchWrapper>
           {Admin ? (
             <LinkPrototype
               variant={"link"}
-              way={`/${routes.Admin}`}
+              way={`/${consts.ADMIN_ROUTE}`}
               label={"Панель Админа"}
             />
           ) : null}
@@ -55,34 +55,37 @@ const Header = () => {
             <>
               <LinkPrototype
                 variant={"link"}
-                way={`/${routes.Profile}`}
+                way={`/${consts.PROFIL_ROUTE}`}
                 label={"Профиль"}
               />
               <LinkPrototype
                 variant={"link"}
-                way={`/${routes.Basket}`}
+                way={`/${consts.BASKET_ROUTE}`}
                 label={"Корзина"}
               />
               <LinkPrototype
                 variant={"link"}
-                way={`/${routes.Deferred}`}
+                way={`/${consts.DEFERRED_ROUTE}`}
                 label={"Отложено"}
               />
             </>
           ) : (
             <LinkPrototype
               variant={"link"}
-              way={`/${routes.Authorization}`}
+              way={`/${consts.AUTORIZATION_ROUTE}`}
               label={"Авторизация"}
             />
           )}
         </TopWrapper>
         <BottonWrapper>
-          <DropDownList label={"Книги"} list={ListBook} />
-          <DropDownList label={"Школа"} list={SchoolList} />
-          <DropDownList label={"Игрушки"} list={GamesList} />
-          <DropDownList label={"Канцтовары"} list={Сhancellery} />
-          <DropDownList label={"Ещё..."} list={Remain} />
+          {types.map((el) => (
+            <DropDownList
+              variant={"header"}
+              name={el.label}
+              listBrand={el.list}
+              key={el.key}
+            />
+          ))}
         </BottonWrapper>
       </NavBarWrapper>
     </HeaderWrapper>

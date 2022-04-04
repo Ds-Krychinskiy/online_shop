@@ -1,53 +1,93 @@
+import Typography from "../../atoms/typography/index";
+import { CardWrapper, ButtonWrapper, ContentWrapper } from "./style";
+import React from "react";
 import Button from "../../atoms/button/index";
-import { CardWrapper, ButtonWrapper } from "./style";
 
-interface ICardProps {
+type CardProps = {
   name: string;
   price: number;
   rating: number;
   variant: string;
-  addInBasket: () => void;
-  addInDeferred: () => void;
-  remove: () => void;
-}
+  addProduct?: () => void;
+  defferedPropduct?: () => void;
+  remove?: () => void;
+  onClick?: () => void;
+};
 
-const Card: React.FC<ICardProps> = ({ name, price, rating, addInBasket, addInDeferred, variant, remove  }) => {
-  
+const Card: React.FC<CardProps> = ({
+  name,
+  price,
+  rating,
+  variant,
+  addProduct,
+  defferedPropduct,
+  remove,
+  onClick,
+}) => {
   switch (variant) {
     case "basket":
       return (
         <CardWrapper>
-          <Button onClick={remove} label={"X"} />
-          <p>{price}</p>
-          <p>{name}</p>
-          <p>{rating}</p>
+          <ContentWrapper onClick={onClick}>
+          <Typography variant={"H1"}>{name}</Typography>
+          <Typography variant={"H1"}>{price}</Typography>
+          <Typography variant={"H1"}>{rating}</Typography>
+          </ContentWrapper>
+          {remove ? (
+            <Button variant={"delete"} onClick={remove} label={"Х"} />
+          ) : null}
         </CardWrapper>
       );
     case "deffered":
       return (
         <CardWrapper>
-          <p>{price}</p>
-          <p>{name}</p>
-          <p>{rating}</p>
+          <ContentWrapper onClick={onClick}>
+          <Typography variant={"H1"}>{name}</Typography>
+          <Typography variant={"H1"}>{price}</Typography>
+          <Typography variant={"H1"}>{rating}</Typography>
+          </ContentWrapper>
           <ButtonWrapper>
-            <Button onClick={remove} label={"X"} />
-            <Button onClick={addInBasket} label={"В корзину"} />
-            <Button onClick={addInDeferred} label={"Лайк"} />
+            {addProduct ? (
+              <Button
+                variant={"add_basket"}
+                onClick={addProduct}
+                label={"В корзину"}
+              />
+            ) : null}
+            {remove ? (
+              <Button variant={"delete"} onClick={remove} label={"X"} />
+            ) : null}
           </ButtonWrapper>
         </CardWrapper>
       );
-    case "general":
+    case "base":
       return (
-        <CardWrapper>
-          <p>{price}</p>
-          <p>{name}</p>
-          <p>{rating}</p>
+        <CardWrapper >
+          <ContentWrapper onClick={onClick}>
+          <Typography variant={"H1"}>{name}</Typography>
+          <Typography variant={"H1"}>{price}</Typography>
+          <Typography variant={"H1"}>{rating}</Typography>
+          </ContentWrapper>
           <ButtonWrapper>
-            <Button onClick={addInBasket} label={"В корзину"} />
-            <Button onClick={addInDeferred} label={"Лайк"} />
+            {addProduct ? (
+              <Button
+                variant={"add_basket"}
+                onClick={addProduct}
+                label={"В корзину"}
+              />
+            ) : null}
+            {defferedPropduct ? (
+              <Button
+                variant={"like"}
+                onClick={defferedPropduct}
+                label={"Отложить"}
+              />
+            ) : null}
           </ButtonWrapper>
         </CardWrapper>
       );
+    default:
+      return <></>;
   }
 };
 

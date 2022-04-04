@@ -1,53 +1,42 @@
+import React from "react";
 import { InputSearch, InputRegistration } from "./style";
-interface IInputProps {
-  placeholder: string;
-  type: string;
+
+interface InputProps {
   variant: string;
-  value: string;
-  label: string;
-  addProduct: (name: string) => void;
+  value?: string | number;
+  type: string;
+  placeholder?: string;
+  onChange: (value: string | number) => void;
 }
-const Input: React.FC<IInputProps> = ({
-  placeholder,
-  type,
+
+const Input: React.FC<InputProps> = ({
   variant,
   value,
-  label,
-  addProduct,
+  type,
+  placeholder,
+  onChange,
 }) => {
-  const onChange = (value) => {
-    addProduct(value);
-  };
-
   switch (variant) {
     case "search":
       return (
         <InputSearch
-          id="outlined-textarea"
-          label={label}
-          placeholder={placeholder}
-        />
-      );
-    case "admin-panel":
-      return (
-        <InputRegistration
-          onChange={(event) => onChange(event.target.value)}
-          value={value}
           placeholder={placeholder}
           type={type}
+          onChange={(e) => console.log(e.target.value)}
+        ></InputSearch>
+      );
+    case "registration":
+      return (
+        <InputRegistration
+          placeholder={placeholder}
+          type={type}
+          required
+          value={value}
+          onChange={(e) => onChange(e.target.value)}
         ></InputRegistration>
       );
     default:
-      return <InputSearch type={type} placeholder={placeholder}></InputSearch>;
+      return <input></input>;
   }
 };
-
 export default Input;
-{
-  /* <TextField
-id="outlined-textarea"
-label="Multiline Placeholder"
-placeholder="Placeholder"
-multiline
-/> */
-}

@@ -1,21 +1,34 @@
 import styled from "styled-components";
 
 export const CardWrapper = styled.div`
-  max-width: 200px;
-  width: 100%;
-  max-height: 300px;
-  height: 100%;
-  border-radius: 10px;
-  border: 2px solid grey;
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: clamp(100px, 20%, 250px);
+  height: clamp(200px, 40%, 400px);
+  border-radius: 15px;
+  border: 1px solid red;
+  cursor: pointer;
   :hover {
-    box-shadow: 0px 5px 20px 0px grey;
+    box-shadow: 0px 0px 15px 10px grey;
   }
 `;
 
+
+export const ContentWrapper = styled.div`
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+max-width: 150px;
+max-height: 250px;
+height: 100%;
+width: 100%;
+
+`
+
 export const ButtonWrapper = styled.div`
+  width: 70%;
   display: flex;
   justify-content: space-between;
 `;

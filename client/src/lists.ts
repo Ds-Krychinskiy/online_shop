@@ -1,10 +1,7 @@
-export interface IListProps {
-  label: string;
-  key: number;
-  way: string;
-}
+import { BrandProps } from "redux/types/brand";
+import { ListProps, ListTypeProps } from "redux/types/type";
 
-export const ListBook: IListProps[] = [
+export const ListBook: ListProps[] = [
   {
     label: "Все книги",
     key: 1,
@@ -57,7 +54,7 @@ export const ListBook: IListProps[] = [
   },
 ];
 
-export const SchoolList: IListProps[] = [
+export const SchoolList: ListProps[] = [
   {
     label: "Русский язык",
     key: 1,
@@ -104,7 +101,7 @@ export const SchoolList: IListProps[] = [
     way: "geography",
   },
 ];
-export const GamesList: IListProps[] = [
+export const GamesList: ListProps[] = [
   {
     label: "Всё игрушки",
     key: 1,
@@ -122,7 +119,7 @@ export const GamesList: IListProps[] = [
   },
 ];
 
-export const Сhancellery = [
+export const Сhancellery: ListProps[] = [
   {
     label: "Все канцтовары",
     key: 1,
@@ -180,7 +177,7 @@ export const Сhancellery = [
   },
 ];
 
-export const Remain = [
+export const Remain: ListProps[] = [
   {
     label: "CD/DVD",
     key: 1,
@@ -200,5 +197,56 @@ export const Remain = [
     label: "Товары для дома",
     key: 4,
     way: "household-products",
+  },
+];
+
+export const ListType: ListTypeProps[] = [
+  {
+    label: "Книги",
+    key: 1,
+    list: ListBook,
+  },
+  {
+    label: "Школа",
+    key: 2,
+    list: SchoolList,
+  },
+  {
+    label: "Игрушки",
+    key: 3,
+    list: GamesList,
+  },
+  {
+    label: "Концелярия",
+    key: 4,
+    list: Сhancellery,
+  },
+  {
+    label: "Ещё...",
+    key: 5,
+    list: Remain,
+  },
+];
+
+export const ListState: BrandProps[] = [
+  {
+    name: "books",
+    list: ListBook,
+  },
+  {
+    name: "scholl",
+    list: SchoolList,
+  },
+  {
+    name: "games",
+    list: GamesList,
+  },
+  {
+    name: "chancellery",
+    list: Сhancellery,
+  },
+  {
+    name: "remain",
+    list: Remain,
   },
 ];

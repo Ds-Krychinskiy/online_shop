@@ -2,8 +2,8 @@ import React from "react";
 import { ErrorStyle, LinkStyle, DropListStyle, HeaderStyle, H1 } from "./style";
 
 interface ITypographeProps {
-  children: String | JSX.Element;
-  variant: String;
+  children: string | JSX.Element | number | undefined;
+  variant: string;
 }
 
 const Typography: React.FC<ITypographeProps> = ({ children, variant }) => {

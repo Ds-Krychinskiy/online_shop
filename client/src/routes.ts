@@ -1,13 +1,56 @@
-export const Basket = "basket";
-export const Profile = "profil";
-export const Deferred = "deferred";
-export const Admin = "admin-panel";
-export const Authorization = "authorization";
-export const Registration = "registration";
-export const Shop = "shop";
+import AdminPanel from "components/pages/admin-panel";
+import Authorization from "components/pages/authorization";
+import Basket from "components/pages/basket";
+import Deferred from "components/pages/deferred";
+import Product from "components/pages/product";
+import Profile from "components/pages/profile";
+import Registration from "components/pages/registration";
+import Shop from "components/pages/shop";
+import {
+  ADMIN_ROUTE,
+  AUTORIZATION_ROUTE,
+  BASKET_ROUTE,
+  DEFERRED_ROUTE,
+  PRODUCT_ROUTE,
+  PROFIL_ROUTE,
+  REGISTRATION_ROUTE,
+  SHOP_ROUTE,
+} from "consts";
 
-export const Books = "books";
-export const School = "school";
-export const Games = "games";
-export const Chancellery = "chancellery";
-export const More = "more";
+export const authRoutes = [
+  {
+    path: ADMIN_ROUTE,
+    Component: AdminPanel,
+  },
+  {
+    path: BASKET_ROUTE,
+    Component: Basket,
+  },
+  {
+    path: PROFIL_ROUTE,
+    Component: Profile,
+  },
+  {
+    path: DEFERRED_ROUTE,
+    Component: Deferred,
+  },
+];
+
+export const publicRoutes = [
+  {
+    path: AUTORIZATION_ROUTE,
+    Component: Authorization,
+  },
+  {
+    path: REGISTRATION_ROUTE,
+    Component: Registration,
+  },
+  {
+    path: SHOP_ROUTE,
+    Component: Shop,
+  },
+  {
+    path: PRODUCT_ROUTE + "/:id",
+    Component: Product,
+  },
+];
