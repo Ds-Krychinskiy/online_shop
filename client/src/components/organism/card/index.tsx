@@ -29,9 +29,9 @@ const Card: React.FC<CardProps> = ({
       return (
         <CardWrapper>
           <ContentWrapper onClick={onClick}>
-          <Typography variant={"H1"}>{name}</Typography>
-          <Typography variant={"H1"}>{price}</Typography>
-          <Typography variant={"H1"}>{rating}</Typography>
+            <Typography variant={"H1"}>{name}</Typography>
+            <Typography variant={"H1"}>{price}</Typography>
+            <Typography variant={"H1"}>{rating}</Typography>
           </ContentWrapper>
           {remove ? (
             <Button variant={"delete"} onClick={remove} label={"Х"} />
@@ -42,9 +42,9 @@ const Card: React.FC<CardProps> = ({
       return (
         <CardWrapper>
           <ContentWrapper onClick={onClick}>
-          <Typography variant={"H1"}>{name}</Typography>
-          <Typography variant={"H1"}>{price}</Typography>
-          <Typography variant={"H1"}>{rating}</Typography>
+            <Typography variant={"H1"}>{name}</Typography>
+            <Typography variant={"H1"}>{price}</Typography>
+            <Typography variant={"H1"}>{rating}</Typography>
           </ContentWrapper>
           <ButtonWrapper>
             {addProduct ? (
@@ -62,11 +62,11 @@ const Card: React.FC<CardProps> = ({
       );
     case "base":
       return (
-        <CardWrapper >
+        <CardWrapper>
           <ContentWrapper onClick={onClick}>
-          <Typography variant={"H1"}>{name}</Typography>
-          <Typography variant={"H1"}>{price}</Typography>
-          <Typography variant={"H1"}>{rating}</Typography>
+            <Typography variant={"H1"}>{name}</Typography>
+            <Typography variant={"H1"}>{price}</Typography>
+            <Typography variant={"H1"}>{rating}</Typography>
           </ContentWrapper>
           <ButtonWrapper>
             {addProduct ? (

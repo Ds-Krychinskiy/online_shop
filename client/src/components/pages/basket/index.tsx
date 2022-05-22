@@ -16,10 +16,7 @@ const Basket = () => {
   let price = basket_product.reduce((acc, el) => {
     return acc + el.price;
   }, 0);
-  const {
-    addDefferedProduct,
-    removeProductFormBasket,
-  } = useAction();
+  const { addDefferedProduct, removeProductFormBasket } = useAction();
   const navigate = useNavigate();
 
   const GoToProductPage = useCallback((id: number) => {

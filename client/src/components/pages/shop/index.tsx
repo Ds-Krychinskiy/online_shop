@@ -8,33 +8,37 @@ import { useTypedSelector } from "redux/hooks/useTypedSelector";
 import { DefaulState } from "redux/types/product";
 import { useAction } from "../../../redux/hooks/useAction";
 
-// import { useTypedSelector } from "../../redux/hooks/useTypedSelector";
-// import { DefaulState } from "../../redux/types/basket";
-
 const Shop = () => {
   const { product, loading, error } = useTypedSelector(
     (state) => state.listProduct
   );
-  const { fetchProduct, addDefferedProduct, addToBasketProduct } = useAction();
+  const {
+    fetchProduct,
+    addDefferedProduct,
+    addToBasketProduct,
+    fetchOneProduct,
+  } = useAction();
 
   const navigate = useNavigate();
 
   const GoToProductPage = useCallback((id: number) => {
+    fetchOneProduct(id);
     navigate(`${PRODUCT_ROUTE}/${id}`);
   }, []);
 
   const fetchProductFromServer = useCallback(() => {
-    fetchProduct()
+    fetchProduct();
   }, []);
 
-
   useEffect(() => {
-    fetchProductFromServer()
+    fetchProductFromServer();
   }, []);
 
   return (
     <>
-      {loading === false ? (
+      {loading ? (
+        <Typography variant={"h1"}>Идёт загрузка...</Typography>
+      ) : (
         <>
           {product.map((el: DefaulState) => (
             <Card
@@ -49,8 +53,6 @@ const Shop = () => {
             />
           ))}
         </>
-      ) : (
-        <Typography variant={"h1"}>Идёт загрузка...</Typography>
       )}
     </>
   );

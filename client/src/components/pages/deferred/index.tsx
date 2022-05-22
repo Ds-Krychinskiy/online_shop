@@ -12,16 +12,14 @@ const Deferred = () => {
     (state) => state.listDeferredProduct
   );
 
-  const {
-    removeProductFromDeffered,
-    addToBasketProduct,
-  } = useAction();
+  const { removeProductFromDeffered, addToBasketProduct } = useAction();
 
   const navigate = useNavigate();
 
   const GoToProductPage = useCallback((id: number) => {
     navigate(`/${PRODUCT_ROUTE}/${id}`);
   }, []);
+
   return (
     <>
       <Typography variant={"h1"}>Отложенные товары</Typography>

@@ -14,18 +14,16 @@ export const CardWrapper = styled.div`
   }
 `;
 
-
 export const ContentWrapper = styled.div`
-display: flex;
-justify-content: center;
-align-items: center;
-flex-direction: column;
-max-width: 150px;
-max-height: 250px;
-height: 100%;
-width: 100%;
-
-`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  max-width: 150px;
+  max-height: 250px;
+  height: 100%;
+  width: 100%;
+`;
 
 export const ButtonWrapper = styled.div`
   width: 70%;
