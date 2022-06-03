@@ -1,10 +1,8 @@
 import React from "react";
 import {
   ButtonSearch,
-  ButtonClose,
   AdminPanelButton,
-  Like,
-  AddBasket,
+  ButtonBasic,
 } from "./style";
 
 interface IButtonProps {
@@ -21,20 +19,10 @@ const Button: React.FC<IButtonProps> = ({
   disabled,
 }) => {
   switch (variant) {
+    case "basic":
+      return <ButtonBasic onClick={onClick}>{label}</ButtonBasic>;
     case "search":
       return <ButtonSearch onClick={onClick}>{label}</ButtonSearch>;
-    case "x":
-      return <ButtonClose onClick={onClick}>{label}</ButtonClose>;
-    case "add_basket":
-      return (
-        <AddBasket onClick={onClick} disabled={disabled}>
-          {label}
-        </AddBasket>
-      );
-    case "like":
-      return <Like onClick={onClick}>{label}</Like>;
-    case "delete":
-      return <Like onClick={onClick}>{label}</Like>;
     case "admin-panel":
       return (
         <AdminPanelButton onClick={onClick} disabled={disabled}>

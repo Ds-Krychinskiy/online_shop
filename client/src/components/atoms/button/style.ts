@@ -15,7 +15,16 @@ export const ButtonSearch = styled.button`
   }
 `;
 
-export const ButtonClose = styled.button``;
+export const ButtonBasic = styled.button`
+width: 7em;
+height: 2em;
+border: none;
+border-radius: 2em;
+background-color: white;
+:hover{
+  background-color: #e07d36c6;
+}
+`;
 
 export const AdminPanelButton = styled.button`
   max-width: 150px;
@@ -35,6 +44,4 @@ export const AdminPanelButton = styled.button`
   }
 `;
 
-export const Like = styled.button``;
 
-export const AddBasket = styled.button``;

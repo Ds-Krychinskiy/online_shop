@@ -1,4 +1,5 @@
-import { BasketActionType, DefaulState } from "../../types/basket";
+import { DefaulState } from "redux/types/product";
+import { BasketActionType } from "../../types/basket";
 
 export const addToBasketProduct = (el: DefaulState) => {
   return (dispatch) => {
@@ -6,9 +7,8 @@ export const addToBasketProduct = (el: DefaulState) => {
   };
 };
 
-export const removeProductFormBasket = (el: number) => {
+export const removeProductFormBasket = (name: string) => {
   return (dispatch) => {
-    console.log(el);
-    dispatch({ type: BasketActionType.REMOVE_PRODUCT, payload: el });
+    dispatch({ type: BasketActionType.REMOVE_PRODUCT, payload: name });
   };
 };

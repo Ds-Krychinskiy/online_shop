@@ -19,7 +19,7 @@ export const deferredProductReducer = (
       return {
         ...state,
         deffered_product: state.deffered_product.filter(
-          (el) => el.id !== action.payload
+          (el) => el.name !== action.payload
         ),
       };
     default:

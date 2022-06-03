@@ -19,8 +19,8 @@ const Basket = () => {
   const { addDefferedProduct, removeProductFormBasket } = useAction();
   const navigate = useNavigate();
 
-  const GoToProductPage = useCallback((id: number) => {
-    navigate(`/${PRODUCT_ROUTE}/${id}`);
+  const GoToProductPage = useCallback((name: string) => {
+    navigate(`/${PRODUCT_ROUTE}/${name}`);
   }, []);
 
   return (
@@ -33,12 +33,12 @@ const Basket = () => {
               {basket_product.map((el: DefaulState) => (
                 <Card
                   variant={"basket"}
-                  key={el.id}
+                  key={el.name}
                   name={el.name}
                   price={el.price}
                   rating={el.rating}
-                  onClick={() => GoToProductPage(el.id)}
-                  remove={() => removeProductFormBasket(el.id)}
+                  onClick={() => GoToProductPage(el.name)}
+                  remove={() => removeProductFormBasket(el.name)}
                   defferedPropduct={() => addDefferedProduct(el)}
                 />
               ))}
@@ -58,7 +58,7 @@ const Basket = () => {
           <Typography variant={"h1"}>В корзине пока ничего нет!</Typography>
           <Typography variant={"h1"}>
             Начните с главной страницы или воспользуйтесь поиском, чтобы найти
-            что-то конкретное
+            что-то конкретное...
           </Typography>
         </>
       )}

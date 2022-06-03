@@ -50,7 +50,7 @@ const DropDownList: React.FC<IDropDownListProps> = ({
       return (
         <>
           <List component="nav" aria-labelledby="nested-list-subheader">
-            <ListItemButton onMouseMove={handleClick}>
+            <ListItemButton onClick={handleClick}>
               <Typography variant={"link"}>
                 <ListItemText primary={name} />
               </Typography>

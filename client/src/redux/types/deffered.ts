@@ -1,11 +1,4 @@
-export type DefaulState = {
-  name: string;
-  price: number;
-  brandId: number;
-  typeID: number;
-  id: number;
-  rating: number;
-};
+import { DefaulState } from "./product";
 
 export interface ProductState {
   deffered_product: DefaulState[];

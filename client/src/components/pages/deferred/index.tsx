@@ -16,8 +16,8 @@ const Deferred = () => {
 
   const navigate = useNavigate();
 
-  const GoToProductPage = useCallback((id: number) => {
-    navigate(`/${PRODUCT_ROUTE}/${id}`);
+  const GoToProductPage = useCallback((name: string) => {
+    navigate(`/${PRODUCT_ROUTE}/${name}`);
   }, []);
 
   return (
@@ -28,13 +28,13 @@ const Deferred = () => {
           {deffered_product.map((el) => (
             <Card
               variant={"deffered"}
-              key={el.id}
+              key={el.name}
               name={el.name}
               price={el.price}
               rating={el.rating}
-              remove={() => removeProductFromDeffered(el.id)}
+              remove={() => removeProductFromDeffered(el.name)}
               addProduct={() => addToBasketProduct(el)}
-              onClick={() => GoToProductPage(el.id)}
+              onClick={() => GoToProductPage(el.name)}
             />
           ))}
         </DeferredStyled>

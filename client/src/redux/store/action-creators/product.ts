@@ -1,15 +1,13 @@
-import axios from "axios";
-import { ProductActionType } from "../../types/product";
+import {  ProductActionType } from "../../types/product";
 
-export const fetchProduct = () => {
-  return async (dispatch) => {
+export const fetchProduct = (product) => {
+  return  (dispatch) => {
     try {
       dispatch({ type: ProductActionType.GET_PRODUCT });
-      const response = await axios.get("http://localhost:5000/api/device");
       setTimeout(() => {
         dispatch({
           type: ProductActionType.GET_PRODUCT_SUCCESS,
-          payload: response.data,
+          payload: product,
         });
       }, 1500);
     } catch (e) {

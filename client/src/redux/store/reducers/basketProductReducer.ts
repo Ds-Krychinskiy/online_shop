@@ -18,7 +18,7 @@ export const BasketReducer = (
       return {
         ...state,
         basket_product: state.basket_product.filter(
-          (el) => el.id !== action.payload
+          (el) => el.name !== action.payload
         ),
       };
     default:

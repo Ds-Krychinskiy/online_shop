@@ -8,48 +8,33 @@ export const ListBook: ListProps[] = [
     way: "books",
   },
   {
-    label: "Билингвы и книги на иностранных языках",
+    label: "Книги на иностранных языках",
     key: 2,
     way: "bilinguals",
   },
   {
-    label: "Книги для детей",
-    key: 3,
-    way: "books-for-children",
-  },
-  {
-    label: "Комиксы, Манга, Артбуки",
-    key: 4,
-    way: "comics",
-  },
-  {
-    label: "Молодёжная литература",
-    key: 5,
-    way: "youth-literature",
-  },
-  {
     label: "Нехудожественнная литература",
-    key: 6,
+    key: 3,
     way: "non-fiction",
   },
   {
     label: "Периодические издания",
-    key: 7,
+    key: 4,
     way: "periodicals",
   },
   {
     label: "Религия",
-    key: 8,
+    key: 5,
     way: "religion",
   },
   {
     label: "Учебная, методическая литература и словари",
-    key: 9,
+    key: 6,
     way: "methodical-literature",
   },
   {
     label: "Художественная литература",
-    key: 10,
+    key: 7,
     way: "fiction",
   },
 ];
@@ -84,21 +69,6 @@ export const SchoolList: ListProps[] = [
     label: "Литература",
     key: 6,
     way: "literature",
-  },
-  {
-    label: "Физика",
-    key: 7,
-    way: "physics",
-  },
-  {
-    label: "Биология",
-    key: 8,
-    way: "biology",
-  },
-  {
-    label: "География",
-    key: 9,
-    way: "geography",
   },
 ];
 export const GamesList: ListProps[] = [
@@ -159,21 +129,6 @@ export const Сhancellery: ListProps[] = [
     label: "Принадлежности для черчения",
     key: 8,
     way: "sketching-supplies",
-  },
-  {
-    label: "Рисование",
-    key: 9,
-    way: "painting",
-  },
-  {
-    label: "Сумки",
-    key: 10,
-    way: "handbags",
-  },
-  {
-    label: "Товары для школы",
-    key: 11,
-    way: "goods-for-school",
   },
 ];
 

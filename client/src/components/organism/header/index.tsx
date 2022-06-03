@@ -55,11 +55,6 @@ const Header = () => {
             <>
               <LinkPrototype
                 variant={"link"}
-                way={`/${consts.PROFIL_ROUTE}`}
-                label={"Профиль"}
-              />
-              <LinkPrototype
-                variant={"link"}
                 way={`/${consts.BASKET_ROUTE}`}
                 label={"Корзина"}
               />

@@ -1,10 +1,10 @@
 export type DefaulState = {
   name: string;
+  author: string;
   price: number;
-  brandId: number;
-  typeID: number;
-  id: number;
+  genre: string;
   rating: number;
+  info: string
 };
 
 export interface ProductState {

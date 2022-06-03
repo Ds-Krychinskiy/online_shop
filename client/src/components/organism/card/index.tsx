@@ -34,7 +34,7 @@ const Card: React.FC<CardProps> = ({
             <Typography variant={"H1"}>{rating}</Typography>
           </ContentWrapper>
           {remove ? (
-            <Button variant={"delete"} onClick={remove} label={"Х"} />
+            <Button variant={"basic"} onClick={remove} label={"Х"} />
           ) : null}
         </CardWrapper>
       );
@@ -49,13 +49,13 @@ const Card: React.FC<CardProps> = ({
           <ButtonWrapper>
             {addProduct ? (
               <Button
-                variant={"add_basket"}
+                variant={"basic"}
                 onClick={addProduct}
                 label={"В корзину"}
               />
             ) : null}
             {remove ? (
-              <Button variant={"delete"} onClick={remove} label={"X"} />
+              <Button variant={"basic"} onClick={remove} label={"X"} />
             ) : null}
           </ButtonWrapper>
         </CardWrapper>
@@ -71,14 +71,14 @@ const Card: React.FC<CardProps> = ({
           <ButtonWrapper>
             {addProduct ? (
               <Button
-                variant={"add_basket"}
+                variant={"basic"}
                 onClick={addProduct}
                 label={"В корзину"}
               />
             ) : null}
             {defferedPropduct ? (
               <Button
-                variant={"like"}
+              variant={"basic"}
                 onClick={defferedPropduct}
                 label={"Отложить"}
               />

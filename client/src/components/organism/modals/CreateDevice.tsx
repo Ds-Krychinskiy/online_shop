@@ -32,7 +32,14 @@ const ModalsDevice: React.FC<ModalsDeviceProps> = ({ show, onHide }) => {
   return (
     <>
       <Dialog open={show} onClose={onHide}>
-        <DialogContent sx={{display: "flex", justifyContent: "center", height: "1000px", width: "1000px", }}>
+        <DialogContent
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            height: "1000px",
+            width: "1000px",
+          }}
+        >
           <DialogContentText>Добавить устройство.</DialogContentText>
         </DialogContent>
         <DialogActions>
@@ -61,7 +68,11 @@ const ModalsDevice: React.FC<ModalsDeviceProps> = ({ show, onHide }) => {
             type="file"
             onChange={() => console.log("инпут")}
           ></Input>
-          <Button label={"Добавить "} variant="add_basket" onClick={()=> addInfo()} />
+          <Button
+            label={"Добавить "}
+            variant="add_basket"
+            onClick={() => addInfo()}
+          />
           {info.map((el) => {
             <div>
               <Input

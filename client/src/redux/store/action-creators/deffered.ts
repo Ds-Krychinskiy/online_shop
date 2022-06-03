@@ -1,4 +1,5 @@
-import { DefferedActionType, DefaulState } from "../../types/deffered";
+import { DefaulState } from "redux/types/product";
+import { DefferedActionType } from "../../types/deffered";
 
 export const addDefferedProduct = (el: DefaulState) => {
   return (dispatch) => {
@@ -6,8 +7,8 @@ export const addDefferedProduct = (el: DefaulState) => {
   };
 };
 
-export const removeProductFromDeffered = (el: number) => {
+export const removeProductFromDeffered = (name: string) => {
   return (dispatch) => {
-    dispatch({ type: DefferedActionType.REMOVE_PRODUCT, payload: el });
+    dispatch({ type: DefferedActionType.REMOVE_PRODUCT, payload: name });
   };
 };

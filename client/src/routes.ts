@@ -3,7 +3,6 @@ import Authorization from "components/pages/authorization";
 import Basket from "components/pages/basket";
 import Deferred from "components/pages/deferred";
 import Product from "components/pages/product";
-import Profile from "components/pages/profile";
 import Registration from "components/pages/registration";
 import Shop from "components/pages/shop";
 import {
@@ -12,7 +11,6 @@ import {
   BASKET_ROUTE,
   DEFERRED_ROUTE,
   PRODUCT_ROUTE,
-  PROFIL_ROUTE,
   REGISTRATION_ROUTE,
   SHOP_ROUTE,
 } from "consts";
@@ -26,10 +24,7 @@ export const authRoutes = [
     path: BASKET_ROUTE,
     Component: Basket,
   },
-  {
-    path: PROFIL_ROUTE,
-    Component: Profile,
-  },
+
   {
     path: DEFERRED_ROUTE,
     Component: Deferred,
