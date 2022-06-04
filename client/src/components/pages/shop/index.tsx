@@ -6,15 +6,11 @@ import { DefaulState } from "redux/types/product";
 import { useAction } from "../../../redux/hooks/useAction";
 import { ShopWrappe } from "./style";
 
-
 const Shop = () => {
   const { product, loading, error } = useTypedSelector(
     (state) => state.listProduct
   );
-  const {
-    addDefferedProduct,
-    addToBasketProduct,
-  } = useAction();
+  const { addDefferedProduct, addToBasketProduct } = useAction();
 
   const navigate = useNavigate();
 

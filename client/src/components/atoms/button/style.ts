@@ -16,14 +16,14 @@ export const ButtonSearch = styled.button`
 `;
 
 export const ButtonBasic = styled.button`
-width: 7em;
-height: 2em;
-border: none;
-border-radius: 2em;
-background-color: white;
-:hover{
-  background-color: #e07d36c6;
-}
+  width: 7em;
+  height: 2em;
+  border: none;
+  border-radius: 2em;
+  background-color: white;
+  :hover {
+    background-color: #e07d36c6;
+  }
 `;
 
 export const AdminPanelButton = styled.button`
@@ -43,5 +43,3 @@ export const AdminPanelButton = styled.button`
   :focus {
   }
 `;
-
-

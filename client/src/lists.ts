@@ -56,18 +56,13 @@ export const SchoolList: ListProps[] = [
     way: "english-language",
   },
   {
-    label: "Окружающий мир",
-    key: 4,
-    way: "world",
-  },
-  {
     label: "История",
-    key: 5,
+    key: 4,
     way: "history",
   },
   {
     label: "Литература",
-    key: 6,
+    key: 5,
     way: "literature",
   },
 ];
@@ -99,11 +94,6 @@ export const Сhancellery: ListProps[] = [
     label: "Аксессуары для книг",
     key: 2,
     way: "book-accessories",
-  },
-  {
-    label: "Глобусы",
-    key: 3,
-    way: "globes",
   },
   {
     label: "Обложки для документов",

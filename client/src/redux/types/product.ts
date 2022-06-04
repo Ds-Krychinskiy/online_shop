@@ -4,7 +4,7 @@ export type DefaulState = {
   price: number;
   genre: string;
   rating: number;
-  info: string
+  info: string;
 };
 
 export interface ProductState {

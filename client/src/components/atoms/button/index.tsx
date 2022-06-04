@@ -1,9 +1,5 @@
 import React from "react";
-import {
-  ButtonSearch,
-  AdminPanelButton,
-  ButtonBasic,
-} from "./style";
+import { ButtonSearch, AdminPanelButton, ButtonBasic } from "./style";
 
 interface IButtonProps {
   label: string;

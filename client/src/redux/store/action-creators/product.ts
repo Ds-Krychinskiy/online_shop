@@ -1,7 +1,7 @@
-import {  ProductActionType } from "../../types/product";
+import { ProductActionType } from "../../types/product";
 
 export const fetchProduct = (product) => {
-  return  (dispatch) => {
+  return (dispatch) => {
     try {
       dispatch({ type: ProductActionType.GET_PRODUCT });
       setTimeout(() => {

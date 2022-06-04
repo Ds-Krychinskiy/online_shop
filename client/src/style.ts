@@ -6,4 +6,3 @@ export const PageWrapper = styled.div`
   align-items: center;
   height: 100vh;
 `;
-

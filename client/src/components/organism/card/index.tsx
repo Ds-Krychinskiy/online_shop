@@ -78,7 +78,7 @@ const Card: React.FC<CardProps> = ({
             ) : null}
             {defferedPropduct ? (
               <Button
-              variant={"basic"}
+                variant={"basic"}
                 onClick={defferedPropduct}
                 label={"Отложить"}
               />
