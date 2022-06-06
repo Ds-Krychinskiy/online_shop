@@ -1,12 +1,12 @@
 import { oneProductActionType } from "redux/types/oneDevice";
 
 const defaulState = {
-  oneDevice: [],
+  oneProduct: [],
   loading: false,
   error: null,
 };
 
-export const oneDeviceReducer = (state = defaulState, action: any) => {
+export const oneProductReducer = (state = defaulState, action: any) => {
   switch (action.type) {
     case oneProductActionType.GET_PRODUCT:
       return { loading: true, error: null, oneDevice: [] };
@@ -15,7 +15,7 @@ export const oneDeviceReducer = (state = defaulState, action: any) => {
         ...state,
         loading: false,
         error: null,
-        oneDevice: action.payload,
+        oneProduct: action.payload,
       };
     default:
       return state;

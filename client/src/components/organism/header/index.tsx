@@ -16,8 +16,6 @@ import * as consts from "../../../consts";
 import { useTypedSelector } from "redux/hooks/useTypedSelector";
 
 const Header = () => {
-  const Admin = true;
-  const Authorization = true;
   const { types } = useTypedSelector((state) => state.typeStore);
 
   return (
@@ -44,33 +42,21 @@ const Header = () => {
               onClick={() => console.log("search")}
             />
           </SearchWrapper>
-          {Admin ? (
-            <LinkPrototype
-              variant={"link"}
-              way={`/${consts.ADMIN_ROUTE}`}
-              label={"Панель Админа"}
-            />
-          ) : null}
-          {Authorization ? (
-            <>
-              <LinkPrototype
-                variant={"link"}
-                way={`/${consts.BASKET_ROUTE}`}
-                label={"Корзина"}
-              />
-              <LinkPrototype
-                variant={"link"}
-                way={`/${consts.DEFERRED_ROUTE}`}
-                label={"Отложено"}
-              />
-            </>
-          ) : (
-            <LinkPrototype
-              variant={"link"}
-              way={`/${consts.AUTORIZATION_ROUTE}`}
-              label={"Авторизация"}
-            />
-          )}
+          <LinkPrototype
+            variant={"link"}
+            way={`/${consts.ADMIN_ROUTE}`}
+            label={"Панель Админа"}
+          />
+          <LinkPrototype
+            variant={"link"}
+            way={`/${consts.BASKET_ROUTE}`}
+            label={"Корзина"}
+          />
+          <LinkPrototype
+            variant={"link"}
+            way={`/${consts.DEFERRED_ROUTE}`}
+            label={"Отложено"}
+          />
         </TopWrapper>
         <BottonWrapper>
           {types.map((el) => (

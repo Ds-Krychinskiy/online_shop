@@ -4,11 +4,11 @@ export const CardWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: #edeffa;
   margin-bottom: 2em;
   width: 20em;
   height: 20em;
   border-radius: 15px;
-  cursor: pointer;
   :hover {
     box-shadow: 0px 0px 15px 10px grey;
   }

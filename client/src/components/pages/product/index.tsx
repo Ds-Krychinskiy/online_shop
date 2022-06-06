@@ -1,21 +1,9 @@
-import Card from "components/organism/card";
+import TemplateProduct from "components/temlates/one_product";
 import { useTypedSelector } from "redux/hooks/useTypedSelector";
 
 const Product = () => {
-  const { oneDevice } = useTypedSelector((state) => state.oneDevice);
-  return (
-    <div>
-      {oneDevice.map((el) => (
-        <Card
-          key={el.id}
-          name={el.name}
-          price={el.price}
-          rating={el.rating}
-          variant={"base"}
-        />
-      ))}
-    </div>
-  );
+  const { oneProduct } = useTypedSelector((state) => state.oneProduct);
+  return <TemplateProduct oneProduct={oneProduct} />;
 };
 
 export default Product;

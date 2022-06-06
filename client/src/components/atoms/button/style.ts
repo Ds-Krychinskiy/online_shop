@@ -21,8 +21,11 @@ export const ButtonBasic = styled.button`
   border: none;
   border-radius: 2em;
   background-color: white;
+  background-color: #de8b2c;
+  cursor: pointer;
   :hover {
-    background-color: #e07d36c6;
+    background-color: #f2870c;
+    box-shadow: 0px 0px 10px 2.5px #f2870c;
   }
 `;
 
@@ -39,7 +42,5 @@ export const AdminPanelButton = styled.button`
   :hover {
     background-color: #00bfff;
     box-shadow: 0px 0px 10px 2.5px #808080;
-  }
-  :focus {
   }
 `;
