@@ -60,12 +60,7 @@ const Header = () => {
         </TopWrapper>
         <BottonWrapper>
           {types.map((el) => (
-            <DropDownList
-              variant={"header"}
-              name={el.label}
-              listBrand={el.list}
-              key={el.key}
-            />
+            <DropDownList name={el.label} listBrand={el.list} key={el.key} />
           ))}
         </BottonWrapper>
       </NavBarWrapper>

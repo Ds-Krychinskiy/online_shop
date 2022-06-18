@@ -1,30 +1,32 @@
 import Typography from "../../atoms/typography/index";
 import { CardWrapper, ButtonWrapper, ContentWrapper } from "./style";
 import React from "react";
+import Button from "components/atoms/button";
 
 type CardProps = {
   name: string;
   price: number;
   rating: number;
-  onClick: () => void;
-  buttonsJSX: () => JSX.Element;
+  GoToProductPage: () => void;
 };
 
 const Card: React.FC<CardProps> = ({
   name,
   price,
   rating,
-  onClick,
-  buttonsJSX,
+  GoToProductPage,
 }) => {
   return (
     <CardWrapper>
-      <ContentWrapper onClick={onClick}>
+      <ContentWrapper onClick={GoToProductPage}>
         <Typography variant={"H1"}>{name}</Typography>
         <Typography variant={"H1"}>{price}</Typography>
         <Typography variant={"H1"}>{rating}</Typography>
       </ContentWrapper>
-      <ButtonWrapper>{buttonsJSX()}</ButtonWrapper>
+      <ButtonWrapper>
+        <Button label={""} onClick={() => console.log()} variant={""}></Button>
+        <Button label={""} onClick={() => console.log()} variant={""}></Button>
+      </ButtonWrapper>
     </CardWrapper>
   );
 };

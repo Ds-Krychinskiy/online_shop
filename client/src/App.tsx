@@ -1,18 +1,11 @@
 import Header from "components/organism/header";
-import { useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { useAction } from "redux/hooks/useAction";
 import { authRoutes } from "./routes";
 import { PageWrapper } from "./style";
-import { ListBooks } from "../src/listBook";
+import { ListType } from "lists";
+import GanrePage from "components/pages/GanrePage";
 
 const App = () => {
-  const { fetchProduct } = useAction();
-
-  useEffect(() => {
-    fetchProduct(ListBooks);
-  }, []);
-
   return (
     <PageWrapper>
       <Router>
@@ -22,6 +15,13 @@ const App = () => {
             <Route path={`/${path}`} element={<Component />} />
           </Routes>
         ))}
+        {ListType.map((el) =>
+          el.list.map((e) => (
+            <Routes key={e.way}>
+              <Route path={`/${e.way}`} element={<GanrePage />} />
+            </Routes>
+          ))
+        )}
       </Router>
     </PageWrapper>
   );

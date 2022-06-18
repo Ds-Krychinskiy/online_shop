@@ -11,7 +11,7 @@ export const Wrapp = styled.div`
 export const ProductWrappe = styled.div`
   display: grid;
   justify-content: space-around;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   padding-top: 2em;
   width: 90em;
 `;

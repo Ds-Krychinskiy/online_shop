@@ -1,23 +1,26 @@
+import Paragraph from "components/molecule/paragraph";
 import React from "react";
-import { DefaulState } from "redux/types/product";
+import { DefaulState } from "redux/types/oneDevice";
 
 interface TemplateProductProps {
   oneProduct: DefaulState[];
 }
 
-const TemplateProduct: React.FC<TemplateProductProps> = ({ oneProduct }) => {
+const KekProduct: React.FC<TemplateProductProps> = ({ oneProduct }) => {
   return (
     <>
       {oneProduct.map((el) => (
-        <>
-          {el.name}
-          {el.author}
-          {el.info}
-          {el.price}
-        </>
+        <div>
+          <Paragraph variant={"h1"}>{el.name}</Paragraph>
+          <Paragraph variant={"h1"}>{el.author}</Paragraph>
+          <Paragraph variant={"h1"}>{el.info}</Paragraph>
+          <Paragraph variant={"h1"}>
+            <>{el.price} рублей</>
+          </Paragraph>
+        </div>
       ))}
     </>
   );
 };
 
-export default TemplateProduct;
+export default KekProduct;

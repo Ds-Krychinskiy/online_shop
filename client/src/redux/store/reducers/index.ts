@@ -6,11 +6,13 @@ import { BrandReducer } from "./BrandReducer";
 import { TypeReducer } from "./TypeReducer";
 import { ProductReducer } from "./productReducer";
 import { oneProductReducer } from "./oneProductReducer";
+import { ProductByGenreReducer } from "./productByGenreReducer";
 
 export const rootReducer = combineReducers({
   listProduct: ProductReducer,
   listProductInBasket: BasketReducer,
   listDeferredProduct: deferredProductReducer,
+  productByGenre: ProductByGenreReducer,
   oneProduct: oneProductReducer,
   deviceStore: DeviceReducer,
   brandStore: BrandReducer,

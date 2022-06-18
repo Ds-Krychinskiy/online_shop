@@ -1,5 +1,12 @@
 import React from "react";
-import { ErrorStyle, LinkStyle, DropListStyle, HeaderStyle, H1 } from "./style";
+import {
+  ErrorStyle,
+  LinkStyle,
+  DropListStyle,
+  HeaderStyle,
+  H1,
+  CountPage,
+} from "./style";
 
 interface ITypographeProps {
   children: string | JSX.Element | number | undefined;
@@ -18,6 +25,8 @@ const Typography: React.FC<ITypographeProps> = ({ children, variant }) => {
       return <ErrorStyle></ErrorStyle>;
     case "header":
       return <HeaderStyle>{children}</HeaderStyle>;
+    case "countPage":
+      return <CountPage>{children}</CountPage>;
     default:
       return <p>{children}</p>;
   }

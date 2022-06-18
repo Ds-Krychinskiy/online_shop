@@ -1,32 +1,29 @@
-import PaginationComponent from "components/molecule/pagination";
 import Typography from "components/atoms/typography";
 import Card from "components/organism/card";
-import React from "react";
 import { DefaulState } from "redux/types/product";
 import { ProductWrappe, Wrapp } from "./style";
 import { useNavigate } from "react-router";
 import { PRODUCT_ROUTE } from "consts";
 
-interface TemplateProductProps {
+interface BasketTemplateProps {
   label: string;
-  pages: number[];
   product: DefaulState[];
   fetchOneProduct: (el: DefaulState) => void;
-  onClick: (el: DefaulState) => void;
-  onClick2: (name: DefaulState) => void;
 }
 
-const TemplatesProduct: React.FC<TemplateProductProps> = ({
+const BasketTemplate: React.FC<BasketTemplateProps> = ({
   label,
   product,
   fetchOneProduct,
-  pages,
 }) => {
+  let price = product.reduce((acc, el) => {
+    return acc + el.price;
+  }, 0);
   const navigate = useNavigate();
 
   const GoToProductPage = (el: DefaulState) => {
     fetchOneProduct(el);
-    navigate(`${PRODUCT_ROUTE}/${el.name}`);
+    navigate(`/${PRODUCT_ROUTE}/${el.name}`);
   };
 
   return (
@@ -43,9 +40,8 @@ const TemplatesProduct: React.FC<TemplateProductProps> = ({
           />
         ))}
       </ProductWrappe>
-      <PaginationComponent count={pages.length} />
     </Wrapp>
   );
 };
 
-export default TemplatesProduct;
+export default BasketTemplate;

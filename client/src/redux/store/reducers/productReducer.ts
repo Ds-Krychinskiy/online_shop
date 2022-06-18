@@ -2,6 +2,9 @@ import { ProductState, ProductActionType } from "../../types/product";
 
 const defaultState: ProductState = {
   product: [],
+  pageSize: 10,
+  currentPage: 1,
+  totalBooksCount: 0,
   loading: false,
   error: null,
 };
@@ -12,9 +15,21 @@ export const ProductReducer = (
 ): ProductState => {
   switch (action.type) {
     case ProductActionType.GET_PRODUCT:
-      return { loading: true, error: null, product: [] };
+      return { ...state, loading: true };
     case ProductActionType.GET_PRODUCT_SUCCESS:
-      return { ...state, loading: false, error: null, product: action.payload };
+      return {
+        ...state,
+        product: action.payload.product,
+        totalBooksCount: action.payload.totalBooksCount,
+      };
+    case ProductActionType.GET_PRODUCT_BY_PAGE:
+      return {
+        ...state,
+        product: state.product.slice(
+          state.currentPage * state.pageSize,
+          state.currentPage * state.pageSize + state.pageSize
+        ),
+      };
     default:
       return state;
   }

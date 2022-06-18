@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const ErrorStyle = styled.p`
+export const ErrorStyle = styled.h2`
   padding: 0px;
   margin: 0px;
   border: 0px;
@@ -8,7 +8,7 @@ export const ErrorStyle = styled.p`
   font-size: 25px;
 `;
 
-export const DropListStyle = styled.p`
+export const DropListStyle = styled.h2`
   display: flex;
   align-items: center;
   margin: 0px;
@@ -19,7 +19,7 @@ export const DropListStyle = styled.p`
   width: 100%;
   height: 100%;
 `;
-export const LinkStyle = styled.p`
+export const LinkStyle = styled.h2`
   padding: 0px;
   margin: 0px;
   border: 0px;
@@ -27,11 +27,18 @@ export const LinkStyle = styled.p`
   font-size: 20px;
 `;
 
-export const HeaderStyle = styled.p`
+export const HeaderStyle = styled.h2`
   font-size: 35px;
   color: white;
 `;
 
-export const H1 = styled.p`
+export const H1 = styled.h2`
   font-size: 25px;
+`;
+
+export const CountPage = styled.h2`
+  :hover {
+    cursor: pointer;
+    color: #f2870c;
+  }
 `;

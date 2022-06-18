@@ -20,12 +20,10 @@ export const authRoutes = [
     path: BASKET_ROUTE,
     Component: Basket,
   },
-
   {
     path: DEFERRED_ROUTE,
     Component: Deferred,
   },
-
   {
     path: SHOP_ROUTE,
     Component: Shop,

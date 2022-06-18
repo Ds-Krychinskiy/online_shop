@@ -3,38 +3,33 @@ import { ListProps, ListTypeProps } from "redux/types/type";
 
 export const ListBook: ListProps[] = [
   {
-    label: "Все книги",
-    key: 1,
-    way: "books",
-  },
-  {
     label: "Книги на иностранных языках",
-    key: 2,
+    key: 1,
     way: "bilinguals",
   },
   {
     label: "Нехудожественнная литература",
-    key: 3,
+    key: 2,
     way: "non-fiction",
   },
   {
     label: "Периодические издания",
-    key: 4,
+    key: 3,
     way: "periodicals",
   },
   {
     label: "Религия",
-    key: 5,
+    key: 4,
     way: "religion",
   },
   {
     label: "Учебная, методическая литература и словари",
-    key: 6,
+    key: 5,
     way: "methodical-literature",
   },
   {
     label: "Художественная литература",
-    key: 7,
+    key: 6,
     way: "fiction",
   },
 ];
@@ -66,23 +61,6 @@ export const SchoolList: ListProps[] = [
     way: "literature",
   },
 ];
-export const GamesList: ListProps[] = [
-  {
-    label: "Всё игрушки",
-    key: 1,
-    way: "all-toys",
-  },
-  {
-    label: "Детское творчество",
-    key: 2,
-    way: "сhildrens-сreativity",
-  },
-  {
-    label: "Игры и Игрушки",
-    key: 3,
-    way: "games-and-toys",
-  },
-];
 
 export const Сhancellery: ListProps[] = [
   {
@@ -97,51 +75,28 @@ export const Сhancellery: ListProps[] = [
   },
   {
     label: "Обложки для документов",
-    key: 4,
+    key: 3,
     way: "covers-for-documents",
   },
   {
     label: "Офисная канцелярия",
-    key: 5,
+    key: 4,
     way: "office-stationery",
   },
   {
     label: "Папки, скоросшиватели, разделители",
-    key: 6,
+    key: 5,
     way: "folders",
   },
   {
     label: "Письменные принадлежности",
-    key: 7,
+    key: 6,
     way: "writing-utensils",
   },
   {
     label: "Принадлежности для черчения",
-    key: 8,
+    key: 7,
     way: "sketching-supplies",
-  },
-];
-
-export const Remain: ListProps[] = [
-  {
-    label: "CD/DVD",
-    key: 1,
-    way: "dvd",
-  },
-  {
-    label: "Сувениры",
-    key: 2,
-    way: "souvenirs",
-  },
-  {
-    label: "Журналы",
-    key: 3,
-    way: "magazines",
-  },
-  {
-    label: "Товары для дома",
-    key: 4,
-    way: "household-products",
   },
 ];
 
@@ -157,19 +112,9 @@ export const ListType: ListTypeProps[] = [
     list: SchoolList,
   },
   {
-    label: "Игрушки",
-    key: 3,
-    list: GamesList,
-  },
-  {
     label: "Концелярия",
-    key: 4,
+    key: 3,
     list: Сhancellery,
-  },
-  {
-    label: "Ещё...",
-    key: 5,
-    list: Remain,
   },
 ];
 
@@ -183,15 +128,7 @@ export const ListState: BrandProps[] = [
     list: SchoolList,
   },
   {
-    name: "games",
-    list: GamesList,
-  },
-  {
     name: "chancellery",
     list: Сhancellery,
-  },
-  {
-    name: "remain",
-    list: Remain,
   },
 ];
