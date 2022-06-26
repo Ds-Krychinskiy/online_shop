@@ -12,7 +12,7 @@ const GanrePage = () => {
     addToBasketProduct,
     addDefferedProduct,
     getProduct,
-    fetchOneProduct,
+    fetchOneProduct,fetchProductByPages
   } = useAction();
 
   const { productByGenre } = useTypedSelector((state) => state.productByGenre);
@@ -28,6 +28,7 @@ const GanrePage = () => {
   return (
     <TemplatesProduct
       label={"Work"}
+      pageNavigation={fetchProductByPages}
       product={productByGenre}
       fetchOneProduct={fetchOneProduct}
       pages={pages}

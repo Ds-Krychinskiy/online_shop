@@ -1,9 +1,8 @@
-import PaginationComponent from "components/molecule/pagination";
 import Typography from "components/atoms/typography";
 import Card from "components/organism/card";
 import React from "react";
 import { DefaulState } from "redux/types/product";
-import { ProductWrappe, Wrapp } from "./style";
+import {  ProductWrappe, Wrapp } from "./style";
 import { useNavigate } from "react-router";
 import { PRODUCT_ROUTE } from "consts";
 
@@ -12,6 +11,7 @@ interface TemplateProductProps {
   pages: number[];
   product: DefaulState[];
   fetchOneProduct: (el: DefaulState) => void;
+  pageNavigation: (index: number, pagesCoun: number) => void,
   onClick: (el: DefaulState) => void;
   onClick2: (name: DefaulState) => void;
 }
@@ -43,7 +43,7 @@ const TemplatesProduct: React.FC<TemplateProductProps> = ({
           />
         ))}
       </ProductWrappe>
-      <PaginationComponent count={pages.length} />
+  
     </Wrapp>
   );
 };

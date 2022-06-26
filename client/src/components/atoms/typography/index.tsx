@@ -11,9 +11,10 @@ import {
 interface ITypographeProps {
   children: string | JSX.Element | number | undefined;
   variant: string;
+  onClick?: () => void
 }
 
-const Typography: React.FC<ITypographeProps> = ({ children, variant }) => {
+const Typography: React.FC<ITypographeProps> = ({ children, variant, onClick }) => {
   switch (variant) {
     case "h1":
       return <H1>{children}</H1>;
@@ -26,7 +27,7 @@ const Typography: React.FC<ITypographeProps> = ({ children, variant }) => {
     case "header":
       return <HeaderStyle>{children}</HeaderStyle>;
     case "countPage":
-      return <CountPage>{children}</CountPage>;
+      return <CountPage onClick={onClick}>{children}</CountPage>;
     default:
       return <p>{children}</p>;
   }

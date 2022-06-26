@@ -15,3 +15,4 @@ export const ProductWrappe = styled.div`
   padding-top: 2em;
   width: 90em;
 `;
+

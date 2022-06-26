@@ -12,7 +12,7 @@ const Shop = () => {
   const { product, loading, error, pageSize, totalBooksCount } =
     useTypedSelector((state) => state.listProduct);
 
-  const { addDefferedProduct, addToBasketProduct, fetchOneProduct } =
+  const { addDefferedProduct, addToBasketProduct, fetchOneProduct, fetchProductByPages} =
     useAction();
 
   useEffect(() => {
@@ -32,6 +32,7 @@ const Shop = () => {
       product={product}
       fetchOneProduct={fetchOneProduct}
       pages={pages}
+      pageNavigation={fetchProductByPages}
       onClick={addToBasketProduct}
       onClick2={addDefferedProduct}
     />

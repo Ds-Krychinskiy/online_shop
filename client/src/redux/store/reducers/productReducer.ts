@@ -25,9 +25,8 @@ export const ProductReducer = (
     case ProductActionType.GET_PRODUCT_BY_PAGE:
       return {
         ...state,
-        product: state.product.slice(
-          state.currentPage * state.pageSize,
-          state.currentPage * state.pageSize + state.pageSize
+        product: state.product.filter(( el, index) =>  
+          index > state.pageSize * action.payload.index && index < state.pageSize * action.payload.pagesCount
         ),
       };
     default:

@@ -15,3 +15,19 @@ export const fetchProduct = (product: DefaulState[]) => {
     }
   };
 };
+
+export const fetchProductByPages = (index: number, pagesCount: number) => {
+  return (dispatch) => {
+    try{
+      dispatch({
+        type: ProductActionType.GET_PRODUCT_BY_PAGE,
+        payload: {
+          index,
+          pagesCount
+        }
+      })
+    }catch(e){
+      console.error(e)
+    }
+  }
+}

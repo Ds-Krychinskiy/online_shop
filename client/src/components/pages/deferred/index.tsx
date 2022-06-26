@@ -7,13 +7,14 @@ const Deferred = () => {
     (state) => state.listDeferredProduct
   );
 
-  const { removeProductFromDeffered, addToBasketProduct, fetchOneProduct } =
+  const { removeProductFromDeffered, addToBasketProduct, fetchOneProduct, fetchProductByPages } =
     useAction();
 
   let pages: number[] = [];
 
   return (
     <TemplatesProduct
+pageNavigation={fetchProductByPages}
       label={"Отложенные книги."}
       fetchOneProduct={fetchOneProduct}
       product={deffered_product}
